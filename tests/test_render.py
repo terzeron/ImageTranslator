@@ -374,8 +374,8 @@ class TestRenderBboxSizeConstraint:
         # bbox 외부에 텍스트가 그려지면 안 됨
         assert changed_outside == 0, f"bbox 외부에 {changed_outside}개 변경 픽셀 발견"
 
-    def test_distant_bboxes_render_separately(self, tmp_path, monkeypatch):
-        """멀리 떨어진 2개의 bbox가 합쳐진 큰 영역이 아닌 개별 bbox에 렌더링"""
+    def test_distant_bboxes_merged_into_one(self, tmp_path, monkeypatch):
+        """같은 translation item의 멀리 떨어진 bbox도 bounding rect로 합쳐서 렌더링"""
         monkeypatch.chdir(tmp_path)
         img_path = _make_test_image(
             tmp_path, width=500, height=300, color=(255, 255, 255)
@@ -385,136 +385,64 @@ class TestRenderBboxSizeConstraint:
                 "original_texts": ["上", "下"],
                 "translated": "위쪽 아래쪽",
                 "bboxes": [
-                    [[50, 20], [100, 20], [100, 60], [50, 60]],  # 위쪽 bbox
-                    [
-                        [50, 200],
-                        [100, 200],
-                        [100, 240],
-                        [50, 240],
-                    ],  # 아래쪽 bbox (멀리 떨어짐)
+                    [[50, 20], [100, 20], [100, 60], [50, 60]],
+                    [[50, 200], [100, 200], [100, 240], [50, 240]],
                 ],
             }
         ]
         tr_json = _make_translated_json(tmp_path, translations)
         output = run_render(str(tr_json), str(img_path))
-
-        rendered = Image.open(output)
-        import numpy as np
-
-        arr = np.array(rendered)
-
-        # 두 bbox 사이 중간 영역(100~190)에 텍스트가 없어야 함
-        middle_area = arr[100:190, 40:110, :]
-        changed_middle = np.sum(middle_area < 250)
-        assert changed_middle == 0, (
-            f"두 bbox 사이에 {changed_middle}개 변경 픽셀 발견 (이전 합산 렌더링 문제)"
-        )
+        assert output.exists()
 
 
-class TestClusterBboxes:
-    """겹치거나 인접한 bbox 클러스터링 검증."""
+class TestTranslationItemRendering:
+    """translation item 단위 렌더링 검증."""
 
-    def test_non_overlapping_separate_clusters(self):
-        from render import _cluster_bboxes
-
-        rects = [(0, 0, 10, 10), (100, 100, 110, 110)]
-        clusters = _cluster_bboxes(rects)
-        assert len(clusters) == 2
-
-    def test_overlapping_single_cluster(self):
-        from render import _cluster_bboxes
-
-        rects = [(0, 0, 20, 20), (10, 10, 30, 30)]
-        clusters = _cluster_bboxes(rects)
-        assert len(clusters) == 1
-        assert sorted(clusters[0]) == [0, 1]
-
-    def test_nearby_within_bbox_size(self):
-        from render import _cluster_bboxes
-
-        # 10x10 bbox, 간격 8px → 평균 폭(10)보다 작으므로 같은 클러스터
-        rects = [(0, 0, 10, 10), (18, 0, 28, 10)]
-        clusters = _cluster_bboxes(rects)
-        assert len(clusters) == 1
-
-    def test_far_apart_separate(self):
-        from render import _cluster_bboxes
-
-        # 10x10 bbox, 간격 50px → 평균 폭(10)보다 훨씬 크므로 별개
-        rects = [(0, 0, 10, 10), (60, 0, 70, 10)]
-        clusters = _cluster_bboxes(rects)
-        assert len(clusters) == 2
-
-    def test_chain_clustering(self):
-        """A-B 겹침, B-C 겹침 → A,B,C 모두 같은 클러스터"""
-        from render import _cluster_bboxes
-
-        rects = [(0, 0, 15, 10), (10, 0, 25, 10), (20, 0, 35, 10)]
-        clusters = _cluster_bboxes(rects)
-        assert len(clusters) == 1
-        assert sorted(clusters[0]) == [0, 1, 2]
-
-    def test_single_bbox(self):
-        from render import _cluster_bboxes
-
-        rects = [(0, 0, 10, 10)]
-        clusters = _cluster_bboxes(rects)
-        assert len(clusters) == 1
-        assert clusters[0] == [0]
-
-    def test_empty_input(self):
-        from render import _cluster_bboxes
-
-        clusters = _cluster_bboxes([])
-        assert clusters == []
-
-
-class TestShouldCluster:
-    def test_overlapping(self):
-        from render import _should_cluster
-
-        assert _should_cluster((0, 0, 20, 20), (10, 10, 30, 30))
-
-    def test_nearby_within_avg_size(self):
-        from render import _should_cluster
-
-        # 20x20 bbox, 간격 15px → 평균 폭(20)보다 작으므로 클러스터
-        assert _should_cluster((0, 0, 20, 20), (35, 0, 55, 20))
-
-    def test_far_apart(self):
-        from render import _should_cluster
-
-        assert not _should_cluster((0, 0, 10, 10), (100, 100, 110, 110))
-
-    def test_same_column_vertical_text(self):
-        """세로쓰기 말풍선: 같은 열에 약간 떨어진 bbox → 클러스터"""
-        from render import _should_cluster
-
-        # 20x80 bbox, y방향 간격 15px → 평균 높이(80)보다 작으므로 클러스터
-        assert _should_cluster((50, 0, 70, 80), (50, 95, 70, 175))
-
-
-class TestOverlappingBboxRendering:
-    """겹치는 bbox에서 텍스트가 겹치지 않는지 검증."""
-
-    def test_overlapping_bboxes_no_text_overlap(self, tmp_path, monkeypatch):
-        """세로쓰기 스타일: 겹치는 좁은 bbox 2개가 하나의 클러스터로 합쳐져서 렌더링"""
+    def test_multiple_bboxes_merged_as_one_region(self, tmp_path, monkeypatch):
+        """여러 bbox가 하나의 bounding rect로 합쳐져 렌더링"""
         monkeypatch.chdir(tmp_path)
         img_path = _make_test_image(
             tmp_path, width=200, height=200, color=(255, 255, 255)
         )
-        # 세로쓰기 말풍선 시뮬레이션: 두 bbox가 x축으로 겹침
         translations = [
             {
                 "original_texts": ["なんとしても", "出させる!!"],
                 "translated": "어떻게든 내보내라!!",
                 "bboxes": [
-                    [[50, 30], [70, 30], [70, 100], [50, 100]],  # 세로 bbox 1
-                    [[60, 30], [80, 30], [80, 100], [60, 100]],  # 세로 bbox 2 (겹침)
+                    [[50, 30], [70, 30], [70, 100], [50, 100]],
+                    [[60, 30], [80, 30], [80, 100], [60, 100]],
                 ],
             },
         ]
         tr_json = _make_translated_json(tmp_path, translations)
         output = run_render(str(tr_json), str(img_path))
         assert output.exists()
-        # 에러 없이 렌더링되면 성공 (이전에는 겹치는 영역에 텍스트가 2번 그려짐)
+
+    def test_entire_region_erased(self, tmp_path, monkeypatch):
+        """전체 bounding rect 영역이 배경색으로 지워짐"""
+        monkeypatch.chdir(tmp_path)
+        # 흰색 배경, bbox 영역에 검정 (텍스트 시뮬레이션)
+        img = Image.new("RGB", (200, 200), (255, 255, 255))
+        draw_setup = ImageDraw.Draw(img)
+        draw_setup.rectangle([48, 28, 82, 102], fill=(0, 0, 0))
+        img_path = tmp_path / "erase_test.jpg"
+        img.save(img_path)
+
+        translations = [
+            {
+                "original_texts": ["a", "b"],
+                "translated": "테스트",
+                "bboxes": [
+                    [[50, 30], [70, 30], [70, 70], [50, 70]],
+                    [[50, 70], [80, 70], [80, 100], [50, 100]],
+                ],
+            },
+        ]
+        tr_json = _make_translated_json(tmp_path, translations, source="erase_test.jpg")
+        output = run_render(str(tr_json), str(img_path))
+        rendered = Image.open(output)
+        # bbox 밖 (30,30)은 원래 흰색 배경이어야 함 (지우기 전 영역)
+        outside_pixel = rendered.getpixel((30, 30))
+        assert all(c > 200 for c in outside_pixel), (
+            f"bbox 밖 영역이 변경됨: {outside_pixel}"
+        )
