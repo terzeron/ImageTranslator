@@ -222,17 +222,26 @@ def run_render(
             _erase_rect(draw, img, bx1, by1, bx2, by2)
             bbox_rects.append((bx1, by1, bx2, by2))
 
-        # 2단계: 그룹 내 통일 폰트 크기 결정
-        # 전체 면적 합과 텍스트 길이로 폰트 크기 추정
-        total_area = sum((r[2] - r[0]) * (r[3] - r[1]) for r in bbox_rects) or 1
-        n = len(translated)
-        unified_size = int(math.sqrt(total_area / max(1, n * LINE_SPACING)))
-        # 가장 좁은 bbox 폭을 넘지 않도록
-        min_box_w = min((r[2] - r[0]) for r in bbox_rects)
-        unified_size = max(MIN_FONT_SIZE, min(unified_size, min_box_w))
+        # 2단계: 원본 bbox에서 폰트 크기 추정 (그룹 내 통일)
+        # 세로쓰기(h>w): 폭 ≈ 폰트 크기, 가로쓰기(w>h): 높이 ≈ 폰트 크기
+        estimated_sizes = []
+        for bx1, by1, bx2, by2 in bbox_rects:
+            bw, bh = bx2 - bx1, by2 - by1
+            if bw <= 0 or bh <= 0:
+                continue
+            if bh > bw * 1.5:
+                estimated_sizes.append(bw)  # 세로쓰기: 폭 = 폰트 크기
+            else:
+                estimated_sizes.append(bh)  # 가로쓰기: 높이 = 폰트 크기
+        unified_size = (
+            max(MIN_FONT_SIZE, int(sum(estimated_sizes) / len(estimated_sizes)))
+            if estimated_sizes
+            else MIN_FONT_SIZE
+        )
 
         # 3단계: 텍스트를 각 bbox에 면적 비율로 분배하여 렌더링
         bbox_areas = [(r[2] - r[0]) * (r[3] - r[1]) for r in bbox_rects]
+        total_area = sum(bbox_areas) or 1
         text_remaining = translated
 
         for i, (bx1, by1, bx2, by2) in enumerate(bbox_rects):

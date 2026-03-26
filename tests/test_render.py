@@ -348,11 +348,11 @@ class TestRenderBboxSizeConstraint:
         img_path = _make_test_image(
             tmp_path, width=400, height=300, color=(255, 255, 255)
         )
-        bbox = [[50, 50], [150, 50], [150, 100], [50, 100]]  # 100x50
+        bbox = [[50, 50], [250, 50], [250, 100], [50, 100]]  # 200x50
         translations = [
             {
                 "original_texts": ["テスト"],
-                "translated": "이것은 테스트 문장입니다",
+                "translated": "테스트",
                 "bboxes": [bbox],
             }
         ]
