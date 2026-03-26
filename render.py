@@ -108,6 +108,51 @@ def _wrap_text(text: str, font: ImageFont.FreeTypeFont, max_width: int) -> list[
     return lines or [""]
 
 
+def _render_vertical(
+    draw: ImageDraw.ImageDraw,
+    text: str,
+    x: int,
+    y: int,
+    box_w: int,
+    box_h: int,
+    text_color: tuple[int, int, int],
+    font_path: str,
+) -> None:
+    """세로로 긴 영역에 텍스트를 세로쓰기로 렌더링.
+
+    폰트 크기를 box_w에 맞추고, 한 글자씩 위→아래로 배치.
+    글자가 넘치면 우→좌로 다음 열.
+    """
+    font_size = max(MIN_FONT_SIZE, min(box_w, box_h // max(1, len(text))))
+    font_size = min(font_size, box_w)
+    font = ImageFont.truetype(font_path, font_size)
+
+    char_h = int(font_size * LINE_SPACING)
+    chars_per_col = max(1, box_h // char_h)
+    num_cols = math.ceil(len(text) / chars_per_col)
+
+    # 우→좌 세로쓰기: 첫 열이 오른쪽
+    total_w = num_cols * int(font_size * LINE_SPACING)
+    x_start = x + box_w - int(font_size * LINE_SPACING)
+    if total_w < box_w:
+        x_start = x + box_w - int(font_size * LINE_SPACING) - (box_w - total_w) // 2
+
+    col = 0
+    row = 0
+    for char in text:
+        cx = x_start - col * int(font_size * LINE_SPACING)
+        cy = y + row * char_h
+        char_bbox = font.getbbox(char)
+        char_w = char_bbox[2] - char_bbox[0]
+        # 글자를 열 중앙에 배치
+        cx_centered = cx + (int(font_size * LINE_SPACING) - char_w) // 2
+        draw.text((cx_centered, cy), char, fill=text_color, font=font)
+        row += 1
+        if row >= chars_per_col:
+            row = 0
+            col += 1
+
+
 def _erase_rect(
     draw: ImageDraw.ImageDraw,
     img: Image.Image,
@@ -270,18 +315,23 @@ def run_render(
             bg_color = _get_background_color(img, cx1, cy1, cx2, cy2)
             text_color = _get_text_color(bg_color)
 
-            font_size, lines = _calc_font_size(chunk, cw, ch, font_file)
-            font = ImageFont.truetype(font_file, font_size)
+            is_vertical = ch > cw * 1.2
 
-            total_text_h = int(len(lines) * font_size * LINE_SPACING)
-            y_offset = cy1 + (ch - total_text_h) // 2
+            if is_vertical:
+                _render_vertical(draw, chunk, cx1, cy1, cw, ch, text_color, font_file)
+            else:
+                font_size, lines = _calc_font_size(chunk, cw, ch, font_file)
+                font = ImageFont.truetype(font_file, font_size)
 
-            for line in lines:
-                line_bbox = font.getbbox(line)
-                line_w = line_bbox[2] - line_bbox[0]
-                x_offset = cx1 + (cw - line_w) // 2
-                draw.text((x_offset, y_offset), line, fill=text_color, font=font)
-                y_offset += int(font_size * LINE_SPACING)
+                total_text_h = int(len(lines) * font_size * LINE_SPACING)
+                y_offset = cy1 + (ch - total_text_h) // 2
+
+                for line in lines:
+                    line_bbox = font.getbbox(line)
+                    line_w = line_bbox[2] - line_bbox[0]
+                    x_offset = cx1 + (cw - line_w) // 2
+                    draw.text((x_offset, y_offset), line, fill=text_color, font=font)
+                    y_offset += int(font_size * LINE_SPACING)
 
     output_path = Path.cwd() / f"{img_path.stem}_rendered{img_path.suffix}"
     img.save(output_path)
