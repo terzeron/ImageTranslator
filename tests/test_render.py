@@ -1,7 +1,7 @@
 import json
 import pytest
 
-from PIL import Image
+from PIL import Image, ImageDraw
 
 from render import (
     run_render,
@@ -303,3 +303,109 @@ class TestRunRender:
         tr_json = _make_translated_json(tmp_path, translations)
         output = run_render(str(tr_json), str(img_path))
         assert output.exists()
+
+
+class TestRenderEraseMagin:
+    """텍스트 지우기 마진 검증."""
+
+    def test_erase_covers_beyond_bbox(self, tmp_path):
+        """bbox 외곽 마진만큼 추가로 지워지는지 확인"""
+
+        # 흰색 배경에 bbox 영역+약간 밖에 검정 텍스트 시뮬레이션
+        img = Image.new("RGB", (200, 200), (255, 255, 255))
+        draw_setup = ImageDraw.Draw(img)
+        # bbox(50~100) 바로 밖(48~102)에 검정 픽셀 (잔존 텍스트)
+        draw_setup.rectangle([48, 48, 102, 102], fill=(0, 0, 0))
+        img_path = tmp_path / "margin_test.png"
+        img.save(img_path)
+
+        translations = [
+            {
+                "original_texts": ["test"],
+                "translated": "테스트",
+                "bboxes": [[[50, 50], [100, 50], [100, 100], [50, 100]]],
+            }
+        ]
+        tr_json = _make_translated_json(
+            tmp_path, translations, source="margin_test.png"
+        )
+        output = run_render(str(tr_json), str(img_path))
+        rendered = Image.open(output)
+
+        # 마진(ERASE_MARGIN=3) 범위 내 픽셀(48,48)이 배경색(흰색)으로 지워져야 함
+        edge_pixel = rendered.getpixel((48, 48))
+        assert all(c > 200 for c in edge_pixel), (
+            f"마진 영역이 지워지지 않음: {edge_pixel}"
+        )
+
+
+class TestRenderBboxSizeConstraint:
+    """렌더링된 텍스트가 개별 bbox 크기를 크게 초과하지 않는지 검증."""
+
+    def test_text_fits_within_bbox(self, tmp_path, monkeypatch):
+        """단일 bbox에 렌더링된 텍스트의 크기가 bbox를 초과하지 않아야 함"""
+        monkeypatch.chdir(tmp_path)
+        img_path = _make_test_image(
+            tmp_path, width=400, height=300, color=(255, 255, 255)
+        )
+        bbox = [[50, 50], [150, 50], [150, 100], [50, 100]]  # 100x50
+        translations = [
+            {
+                "original_texts": ["テスト"],
+                "translated": "이것은 테스트 문장입니다",
+                "bboxes": [bbox],
+            }
+        ]
+        tr_json = _make_translated_json(tmp_path, translations)
+        output = run_render(str(tr_json), str(img_path))
+
+        # 렌더링된 이미지에서 텍스트 영역 분석
+        rendered = Image.open(output)
+        import numpy as np
+
+        arr = np.array(rendered)
+
+        # bbox 외부 영역에서 원본(흰색)과 달라진 픽셀 찾기
+        # bbox는 50~150, 50~100 → 그 밖에서 변경된 픽셀이 적어야 함
+        outside_top = arr[0:47, :, :]  # bbox 위 (마진 고려)
+        outside_bottom = arr[103:, :, :]  # bbox 아래 (마진 고려)
+        # 흰색(255)이 아닌 픽셀 수
+        changed_outside = np.sum(outside_top < 250) + np.sum(outside_bottom < 250)
+        # bbox 외부에 텍스트가 그려지면 안 됨
+        assert changed_outside == 0, f"bbox 외부에 {changed_outside}개 변경 픽셀 발견"
+
+    def test_distant_bboxes_render_separately(self, tmp_path, monkeypatch):
+        """멀리 떨어진 2개의 bbox가 합쳐진 큰 영역이 아닌 개별 bbox에 렌더링"""
+        monkeypatch.chdir(tmp_path)
+        img_path = _make_test_image(
+            tmp_path, width=500, height=300, color=(255, 255, 255)
+        )
+        translations = [
+            {
+                "original_texts": ["上", "下"],
+                "translated": "위쪽 아래쪽",
+                "bboxes": [
+                    [[50, 20], [100, 20], [100, 60], [50, 60]],  # 위쪽 bbox
+                    [
+                        [50, 200],
+                        [100, 200],
+                        [100, 240],
+                        [50, 240],
+                    ],  # 아래쪽 bbox (멀리 떨어짐)
+                ],
+            }
+        ]
+        tr_json = _make_translated_json(tmp_path, translations)
+        output = run_render(str(tr_json), str(img_path))
+
+        rendered = Image.open(output)
+        import numpy as np
+
+        arr = np.array(rendered)
+
+        # 두 bbox 사이 중간 영역(100~190)에 텍스트가 없어야 함
+        middle_area = arr[100:190, 40:110, :]
+        changed_middle = np.sum(middle_area < 250)
+        assert changed_middle == 0, (
+            f"두 bbox 사이에 {changed_middle}개 변경 픽셀 발견 (이전 합산 렌더링 문제)"
+        )

@@ -8,6 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 DEFAULT_FONT = Path(__file__).resolve().parent / "fonts" / "NanumBarunGothic.ttf"
 MIN_FONT_SIZE = 8
 LINE_SPACING = 1.2
+ERASE_MARGIN = 3  # bbox 지우기 시 추가 마진 (px)
 
 
 def _get_bbox_rect(bbox: list[list[float]]) -> tuple[int, int, int, int]:
@@ -25,19 +26,15 @@ def _get_background_color(
     w, h = img.size
     pixels = []
 
-    # 상단 띠
     for y in range(max(0, y1 - margin), y1):
         for x in range(max(0, x1 - margin), min(w, x2 + margin)):
             pixels.append(img.getpixel((x, y)))
-    # 하단 띠
     for y in range(y2, min(h, y2 + margin)):
         for x in range(max(0, x1 - margin), min(w, x2 + margin)):
             pixels.append(img.getpixel((x, y)))
-    # 좌측 띠
     for y in range(max(0, y1), min(h, y2)):
         for x in range(max(0, x1 - margin), x1):
             pixels.append(img.getpixel((x, y)))
-    # 우측 띠
     for y in range(max(0, y1), min(h, y2)):
         for x in range(x2, min(w, x2 + margin)):
             pixels.append(img.getpixel((x, y)))
@@ -59,21 +56,14 @@ def _get_text_color(bg_color: tuple[int, ...]) -> tuple[int, int, int]:
 def _calc_font_size(
     text: str, box_w: int, box_h: int, font_path: str
 ) -> tuple[int, list[str]]:
-    """bbox 면적을 최대한 채우는 폰트 크기와 줄바꿈된 텍스트 반환.
-
-    글자 폭/높이를 기반으로 직접 계산한 뒤, 실제 렌더링 크기로 보정.
-    """
+    """bbox 면적을 최대한 채우는 폰트 크기와 줄바꿈된 텍스트 반환."""
     if not text:
         return MIN_FONT_SIZE, [""]
 
-    # 초기 추정: 총 글자 수와 박스 면적으로 폰트 크기 추정
     n = len(text)
-    # s^2 * LINE_SPACING * ceil(n / (W/s)) <= H * W  (면적 제약)
-    # 단순화: s ≈ sqrt(W * H / (n * LINE_SPACING))
     estimated = int(math.sqrt(box_w * box_h / (n * LINE_SPACING)))
     estimated = max(MIN_FONT_SIZE, min(estimated, box_h))
 
-    # 실제 렌더링으로 보정 (최대 5회)
     font_size = estimated
     for _ in range(5):
         font = ImageFont.truetype(font_path, font_size)
@@ -81,7 +71,6 @@ def _calc_font_size(
         total_h = int(len(lines) * font_size * LINE_SPACING)
 
         if total_h <= box_h:
-            # 여유가 있으면 크기를 키워볼 수 있는지 확인
             bigger = font_size + 1
             font_b = ImageFont.truetype(font_path, bigger)
             lines_b = _wrap_text(text, font_b, box_w)
@@ -92,7 +81,6 @@ def _calc_font_size(
                 continue
             break
         else:
-            # 넘치면 줄이기
             font_size = max(MIN_FONT_SIZE, font_size - 1)
             if font_size == MIN_FONT_SIZE:
                 font = ImageFont.truetype(font_path, font_size)
@@ -118,6 +106,25 @@ def _wrap_text(text: str, font: ImageFont.FreeTypeFont, max_width: int) -> list[
     if current:
         lines.append(current)
     return lines or [""]
+
+
+def _erase_bbox(
+    draw: ImageDraw.ImageDraw,
+    img: Image.Image,
+    x1: int,
+    y1: int,
+    x2: int,
+    y2: int,
+) -> tuple[int, ...]:
+    """bbox 영역을 마진 포함하여 배경색으로 지우고, 사용한 배경색 반환."""
+    w, h = img.size
+    bg_color = _get_background_color(img, x1, y1, x2, y2)
+    ex1 = max(0, x1 - ERASE_MARGIN)
+    ey1 = max(0, y1 - ERASE_MARGIN)
+    ex2 = min(w, x2 + ERASE_MARGIN)
+    ey2 = min(h, y2 + ERASE_MARGIN)
+    draw.rectangle([ex1, ey1, ex2, ey2], fill=bg_color)
+    return bg_color
 
 
 def run_render(
@@ -148,47 +155,60 @@ def run_render(
         if not translated.strip():
             continue
 
-        # 모든 bbox를 합친 영역 계산
-        all_x, all_y = [], []
-        for bbox in item["bboxes"]:
-            for p in bbox:
-                all_x.append(p[0])
-                all_y.append(p[1])
-
-        x1, y1 = int(min(all_x)), int(min(all_y))
-        x2, y2 = int(max(all_x)), int(max(all_y))
-        box_w = x2 - x1
-        box_h = y2 - y1
-
-        if box_w <= 0 or box_h <= 0:
+        bboxes = item["bboxes"]
+        if not bboxes:
             continue
 
-        # 각 개별 bbox 영역을 배경색으로 지우기
-        for bbox in item["bboxes"]:
+        # 1단계: 모든 개별 bbox를 마진 포함하여 배경색으로 지우기
+        last_bg = None
+        for bbox in bboxes:
             bx1, by1, bx2, by2 = _get_bbox_rect(bbox)
+            last_bg = _erase_bbox(draw, img, bx1, by1, bx2, by2)
+
+        # 2단계: 개별 bbox 단위로 텍스트 분배 및 렌더링
+        # 번역 텍스트를 각 bbox의 면적 비율로 분배
+        bbox_rects = [_get_bbox_rect(b) for b in bboxes]
+        bbox_areas = [(r[2] - r[0]) * (r[3] - r[1]) for r in bbox_rects]
+        total_area = sum(bbox_areas) or 1
+
+        text_remaining = translated
+        for i, (bx1, by1, bx2, by2) in enumerate(bbox_rects):
+            box_w = bx2 - bx1
+            box_h = by2 - by1
+            if box_w <= 0 or box_h <= 0:
+                continue
+
+            # 이 bbox에 할당할 글자 수 (면적 비율)
+            if i < len(bbox_rects) - 1:
+                ratio = bbox_areas[i] / total_area
+                char_count = max(1, round(len(translated) * ratio))
+                chunk = text_remaining[:char_count]
+                text_remaining = text_remaining[char_count:]
+            else:
+                chunk = text_remaining
+
+            if not chunk.strip():
+                continue
+
+            # 배경색/텍스트색 결정
             bg_color = _get_background_color(img, bx1, by1, bx2, by2)
-            draw.rectangle([bx1, by1, bx2, by2], fill=bg_color)
+            text_color = _get_text_color(bg_color)
 
-        # 합쳐진 영역의 배경색/텍스트색 결정
-        bg_color = _get_background_color(img, x1, y1, x2, y2)
-        text_color = _get_text_color(bg_color)
+            # 폰트 크기 결정 (개별 bbox 크기 기준)
+            font_size, lines = _calc_font_size(chunk, box_w, box_h, font_file)
+            font = ImageFont.truetype(font_file, font_size)
 
-        # 폰트 크기 결정 + 줄바꿈
-        font_size, lines = _calc_font_size(translated, box_w, box_h, font_file)
-        font = ImageFont.truetype(font_file, font_size)
+            # 텍스트를 bbox 중앙에 렌더링
+            total_text_h = int(len(lines) * font_size * LINE_SPACING)
+            y_offset = by1 + (box_h - total_text_h) // 2
 
-        # 텍스트를 영역 중앙에 렌더링
-        total_text_h = int(len(lines) * font_size * LINE_SPACING)
-        y_offset = y1 + (box_h - total_text_h) // 2
+            for line in lines:
+                line_bbox = font.getbbox(line)
+                line_w = line_bbox[2] - line_bbox[0]
+                x_offset = bx1 + (box_w - line_w) // 2
+                draw.text((x_offset, y_offset), line, fill=text_color, font=font)
+                y_offset += int(font_size * LINE_SPACING)
 
-        for line in lines:
-            line_bbox = font.getbbox(line)
-            line_w = line_bbox[2] - line_bbox[0]
-            x_offset = x1 + (box_w - line_w) // 2
-            draw.text((x_offset, y_offset), line, fill=text_color, font=font)
-            y_offset += int(font_size * LINE_SPACING)
-
-    # 원본과 같은 포맷으로 저장
     output_path = Path.cwd() / f"{img_path.stem}_rendered{img_path.suffix}"
     img.save(output_path)
     return output_path
