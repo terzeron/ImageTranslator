@@ -126,22 +126,15 @@ def _render_vertical(
         return
 
     if suggested_size > 0:
-        font_size = max(MIN_FONT_SIZE, min(suggested_size, box_w))
+        font_size = max(MIN_FONT_SIZE, suggested_size)
     else:
         font_size = int(math.sqrt(box_w * box_h / (n * LINE_SPACING * LINE_SPACING)))
-        font_size = max(MIN_FONT_SIZE, min(font_size, box_w))
+        font_size = max(MIN_FONT_SIZE, font_size)
 
     char_h = int(font_size * LINE_SPACING)
     col_w = int(font_size * LINE_SPACING)
     chars_per_col = max(1, box_h // char_h)
     num_cols = math.ceil(n / chars_per_col)
-
-    # 열이 너무 많으면 폰트 축소
-    if num_cols * col_w > box_w:
-        font_size = max(MIN_FONT_SIZE, box_w // max(1, num_cols) - 2)
-        char_h = int(font_size * LINE_SPACING)
-        col_w = int(font_size * LINE_SPACING)
-        chars_per_col = max(1, box_h // char_h)
 
     font = ImageFont.truetype(font_path, font_size)
 
