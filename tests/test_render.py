@@ -409,3 +409,103 @@ class TestRenderBboxSizeConstraint:
         assert changed_middle == 0, (
             f"두 bbox 사이에 {changed_middle}개 변경 픽셀 발견 (이전 합산 렌더링 문제)"
         )
+
+
+class TestClusterBboxes:
+    """겹치거나 인접한 bbox 클러스터링 검증."""
+
+    def test_non_overlapping_separate_clusters(self):
+        from render import _cluster_bboxes
+
+        rects = [(0, 0, 10, 10), (100, 100, 110, 110)]
+        clusters = _cluster_bboxes(rects)
+        assert len(clusters) == 2
+
+    def test_overlapping_single_cluster(self):
+        from render import _cluster_bboxes
+
+        rects = [(0, 0, 20, 20), (10, 10, 30, 30)]
+        clusters = _cluster_bboxes(rects)
+        assert len(clusters) == 1
+        assert sorted(clusters[0]) == [0, 1]
+
+    def test_adjacent_within_gap(self):
+        from render import _cluster_bboxes, CLUSTER_GAP
+
+        # gap = CLUSTER_GAP 이하면 같은 클러스터
+        rects = [(0, 0, 10, 10), (10 + CLUSTER_GAP, 0, 20 + CLUSTER_GAP, 10)]
+        clusters = _cluster_bboxes(rects)
+        assert len(clusters) == 1
+
+    def test_beyond_gap_separate(self):
+        from render import _cluster_bboxes, CLUSTER_GAP
+
+        rects = [(0, 0, 10, 10), (10 + CLUSTER_GAP + 2, 0, 30, 10)]
+        clusters = _cluster_bboxes(rects)
+        assert len(clusters) == 2
+
+    def test_chain_clustering(self):
+        """A-B 겹침, B-C 겹침 → A,B,C 모두 같은 클러스터"""
+        from render import _cluster_bboxes
+
+        rects = [(0, 0, 15, 10), (10, 0, 25, 10), (20, 0, 35, 10)]
+        clusters = _cluster_bboxes(rects)
+        assert len(clusters) == 1
+        assert sorted(clusters[0]) == [0, 1, 2]
+
+    def test_single_bbox(self):
+        from render import _cluster_bboxes
+
+        rects = [(0, 0, 10, 10)]
+        clusters = _cluster_bboxes(rects)
+        assert len(clusters) == 1
+        assert clusters[0] == [0]
+
+    def test_empty_input(self):
+        from render import _cluster_bboxes
+
+        clusters = _cluster_bboxes([])
+        assert clusters == []
+
+
+class TestRectsOverlapOrAdjacent:
+    def test_overlapping(self):
+        from render import _rects_overlap_or_adjacent
+
+        assert _rects_overlap_or_adjacent((0, 0, 20, 20), (10, 10, 30, 30))
+
+    def test_adjacent(self):
+        from render import _rects_overlap_or_adjacent
+
+        assert _rects_overlap_or_adjacent((0, 0, 10, 10), (12, 0, 22, 10), gap=5)
+
+    def test_far_apart(self):
+        from render import _rects_overlap_or_adjacent
+
+        assert not _rects_overlap_or_adjacent((0, 0, 10, 10), (100, 100, 110, 110))
+
+
+class TestOverlappingBboxRendering:
+    """겹치는 bbox에서 텍스트가 겹치지 않는지 검증."""
+
+    def test_overlapping_bboxes_no_text_overlap(self, tmp_path, monkeypatch):
+        """세로쓰기 스타일: 겹치는 좁은 bbox 2개가 하나의 클러스터로 합쳐져서 렌더링"""
+        monkeypatch.chdir(tmp_path)
+        img_path = _make_test_image(
+            tmp_path, width=200, height=200, color=(255, 255, 255)
+        )
+        # 세로쓰기 말풍선 시뮬레이션: 두 bbox가 x축으로 겹침
+        translations = [
+            {
+                "original_texts": ["なんとしても", "出させる!!"],
+                "translated": "어떻게든 내보내라!!",
+                "bboxes": [
+                    [[50, 30], [70, 30], [70, 100], [50, 100]],  # 세로 bbox 1
+                    [[60, 30], [80, 30], [80, 100], [60, 100]],  # 세로 bbox 2 (겹침)
+                ],
+            },
+        ]
+        tr_json = _make_translated_json(tmp_path, translations)
+        output = run_render(str(tr_json), str(img_path))
+        assert output.exists()
+        # 에러 없이 렌더링되면 성공 (이전에는 겹치는 영역에 텍스트가 2번 그려짐)

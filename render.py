@@ -8,7 +8,8 @@ from PIL import Image, ImageDraw, ImageFont
 DEFAULT_FONT = Path(__file__).resolve().parent / "fonts" / "NanumBarunGothic.ttf"
 MIN_FONT_SIZE = 8
 LINE_SPACING = 1.2
-ERASE_MARGIN = 3  # bbox 지우기 시 추가 마진 (px)
+ERASE_MARGIN = 3
+CLUSTER_GAP = 5  # bbox 간 이 거리 이하면 같은 클러스터로 묶음
 
 
 def _get_bbox_rect(bbox: list[list[float]]) -> tuple[int, int, int, int]:
@@ -127,6 +128,53 @@ def _erase_bbox(
     return bg_color
 
 
+def _rects_overlap_or_adjacent(
+    r1: tuple[int, int, int, int],
+    r2: tuple[int, int, int, int],
+    gap: int = CLUSTER_GAP,
+) -> bool:
+    """두 rect가 겹치거나 gap 이하로 인접하면 True."""
+    x1a, y1a, x1b, y1b = r1
+    x2a, y2a, x2b, y2b = r2
+    return not (
+        x1b + gap < x2a or x2b + gap < x1a or y1b + gap < y2a or y2b + gap < y1a
+    )
+
+
+def _cluster_bboxes(
+    bbox_rects: list[tuple[int, int, int, int]],
+) -> list[list[int]]:
+    """겹치거나 인접한 bbox들을 클러스터로 묶어 인덱스 그룹 반환.
+
+    Union-Find로 구현.
+    """
+    n = len(bbox_rects)
+    parent = list(range(n))
+
+    def find(x: int) -> int:
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    def union(a: int, b: int) -> None:
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[ra] = rb
+
+    for i in range(n):
+        for j in range(i + 1, n):
+            if _rects_overlap_or_adjacent(bbox_rects[i], bbox_rects[j]):
+                union(i, j)
+
+    clusters: dict[int, list[int]] = {}
+    for i in range(n):
+        root = find(i)
+        clusters.setdefault(root, []).append(i)
+
+    return list(clusters.values())
+
+
 def run_render(
     translated_json_path: str,
     image_path: str,
@@ -160,27 +208,36 @@ def run_render(
             continue
 
         # 1단계: 모든 개별 bbox를 마진 포함하여 배경색으로 지우기
-        last_bg = None
-        for bbox in bboxes:
-            bx1, by1, bx2, by2 = _get_bbox_rect(bbox)
-            last_bg = _erase_bbox(draw, img, bx1, by1, bx2, by2)
-
-        # 2단계: 개별 bbox 단위로 텍스트 분배 및 렌더링
-        # 번역 텍스트를 각 bbox의 면적 비율로 분배
         bbox_rects = [_get_bbox_rect(b) for b in bboxes]
-        bbox_areas = [(r[2] - r[0]) * (r[3] - r[1]) for r in bbox_rects]
-        total_area = sum(bbox_areas) or 1
+        for bx1, by1, bx2, by2 in bbox_rects:
+            _erase_bbox(draw, img, bx1, by1, bx2, by2)
 
+        # 2단계: 겹치거나 인접한 bbox들을 클러스터로 묶기
+        clusters = _cluster_bboxes(bbox_rects)
+
+        # 번역 텍스트를 클러스터 면적 비율로 분배
+        cluster_rects = []
+        cluster_areas = []
+        for indices in clusters:
+            cx1 = min(bbox_rects[i][0] for i in indices)
+            cy1 = min(bbox_rects[i][1] for i in indices)
+            cx2 = max(bbox_rects[i][2] for i in indices)
+            cy2 = max(bbox_rects[i][3] for i in indices)
+            cluster_rects.append((cx1, cy1, cx2, cy2))
+            cluster_areas.append((cx2 - cx1) * (cy2 - cy1))
+
+        total_area = sum(cluster_areas) or 1
         text_remaining = translated
-        for i, (bx1, by1, bx2, by2) in enumerate(bbox_rects):
-            box_w = bx2 - bx1
-            box_h = by2 - by1
-            if box_w <= 0 or box_h <= 0:
+
+        for ci, (cx1, cy1, cx2, cy2) in enumerate(cluster_rects):
+            cw = cx2 - cx1
+            ch = cy2 - cy1
+            if cw <= 0 or ch <= 0:
                 continue
 
-            # 이 bbox에 할당할 글자 수 (면적 비율)
-            if i < len(bbox_rects) - 1:
-                ratio = bbox_areas[i] / total_area
+            # 이 클러스터에 할당할 텍스트
+            if ci < len(cluster_rects) - 1:
+                ratio = cluster_areas[ci] / total_area
                 char_count = max(1, round(len(translated) * ratio))
                 chunk = text_remaining[:char_count]
                 text_remaining = text_remaining[char_count:]
@@ -190,22 +247,21 @@ def run_render(
             if not chunk.strip():
                 continue
 
-            # 배경색/텍스트색 결정
-            bg_color = _get_background_color(img, bx1, by1, bx2, by2)
+            bg_color = _get_background_color(img, cx1, cy1, cx2, cy2)
             text_color = _get_text_color(bg_color)
 
-            # 폰트 크기 결정 (개별 bbox 크기 기준)
-            font_size, lines = _calc_font_size(chunk, box_w, box_h, font_file)
+            # 폰트 크기 결정 (클러스터 bounding rect 기준)
+            font_size, lines = _calc_font_size(chunk, cw, ch, font_file)
             font = ImageFont.truetype(font_file, font_size)
 
-            # 텍스트를 bbox 중앙에 렌더링
+            # 텍스트를 클러스터 영역 중앙에 렌더링
             total_text_h = int(len(lines) * font_size * LINE_SPACING)
-            y_offset = by1 + (box_h - total_text_h) // 2
+            y_offset = cy1 + (ch - total_text_h) // 2
 
             for line in lines:
                 line_bbox = font.getbbox(line)
                 line_w = line_bbox[2] - line_bbox[0]
-                x_offset = bx1 + (box_w - line_w) // 2
+                x_offset = cx1 + (cw - line_w) // 2
                 draw.text((x_offset, y_offset), line, fill=text_color, font=font)
                 y_offset += int(font_size * LINE_SPACING)
 
