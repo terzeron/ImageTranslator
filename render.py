@@ -22,7 +22,8 @@ def _get_background_color(
     img: Image.Image, x1: int, y1: int, x2: int, y2: int
 ) -> tuple[int, ...]:
     """bbox 외곽 띠의 중앙값(median)으로 배경색 결정."""
-    margin = 7
+    bw, bh = x2 - x1, y2 - y1
+    margin = max(7, int(min(bw, bh) * 0.2))
     w, h = img.size
     pixels = []
 
@@ -170,10 +171,12 @@ def _erase_rect(
     y1: int,
     x2: int,
     y2: int,
-    margin: int = ERASE_MARGIN,
 ) -> tuple[int, ...]:
-    """영역을 마진 포함하여 배경색으로 지우고, 사용한 배경색 반환."""
+    """영역을 동적 마진 포함하여 배경색으로 지우고, 사용한 배경색 반환."""
     w, h = img.size
+    # 마진: bbox 크기의 15% (최소 ERASE_MARGIN)
+    bw, bh = x2 - x1, y2 - y1
+    margin = max(ERASE_MARGIN, int(min(bw, bh) * 0.15))
     bg_color = _get_background_color(img, x1, y1, x2, y2)
     ex1 = max(0, x1 - margin)
     ey1 = max(0, y1 - margin)
@@ -206,8 +209,15 @@ def run_render(
     img = Image.open(img_path).convert("RGB")
     draw = ImageDraw.Draw(img)
 
+    # 먼저 모든 translation item의 bbox를 지우기 (빈 번역 포함)
     for item in tr_data["translations"]:
-        translated = item["translated"]
+        for bbox in item.get("bboxes", []):
+            bx1, by1, bx2, by2 = _get_bbox_rect(bbox)
+            _erase_rect(draw, img, bx1, by1, bx2, by2)
+
+    # 텍스트 렌더링
+    for item in tr_data["translations"]:
+        translated = item.get("translated", "")
         if not translated.strip():
             continue
 
@@ -215,12 +225,7 @@ def run_render(
         if not bboxes:
             continue
 
-        # 1단계: 개별 bbox를 rect로 변환 + 배경색으로 지우기
-        bbox_rects = []
-        for bbox in bboxes:
-            bx1, by1, bx2, by2 = _get_bbox_rect(bbox)
-            _erase_rect(draw, img, bx1, by1, bx2, by2)
-            bbox_rects.append((bx1, by1, bx2, by2))
+        bbox_rects = [_get_bbox_rect(b) for b in bboxes]
 
         # 2단계: 원본 텍스트 + bbox에서 폰트 크기 추정 → 중앙값 사용
         original_texts = item.get("original_texts", [])
