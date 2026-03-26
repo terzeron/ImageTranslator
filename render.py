@@ -9,6 +9,7 @@ DEFAULT_FONT = Path(__file__).resolve().parent / "fonts" / "NanumBarunGothic.ttf
 MIN_FONT_SIZE = 8
 LINE_SPACING = 1.2
 ERASE_MARGIN = 5
+SPACE_RATIO = 0.5  # 공백을 글자 폭의 이 비율로 렌더링
 
 
 def _get_bbox_rect(bbox: list[list[float]]) -> tuple[int, int, int, int]:
@@ -91,14 +92,23 @@ def _calc_font_size(
     return font_size, lines
 
 
+def _measure_text(text: str, font: ImageFont.FreeTypeFont) -> int:
+    """공백을 SPACE_RATIO로 계산한 텍스트 폭 반환."""
+    w = 0
+    for char in text:
+        cb = font.getbbox(char)
+        cw = cb[2] - cb[0]
+        w += int(cw * SPACE_RATIO) if char == " " else cw
+    return w
+
+
 def _wrap_text(text: str, font: ImageFont.FreeTypeFont, max_width: int) -> list[str]:
-    """텍스트를 max_width에 맞게 줄바꿈."""
+    """텍스트를 max_width에 맞게 줄바꿈 (공백 폭 SPACE_RATIO 적용)."""
     lines = []
     current = ""
     for char in text:
         test = current + char
-        bbox = font.getbbox(test)
-        w = bbox[2] - bbox[0]
+        w = _measure_text(test, font)
         if w > max_width and current:
             lines.append(current)
             current = char
@@ -107,6 +117,26 @@ def _wrap_text(text: str, font: ImageFont.FreeTypeFont, max_width: int) -> list[
     if current:
         lines.append(current)
     return lines or [""]
+
+
+def _draw_text_line(
+    draw: ImageDraw.ImageDraw,
+    x: int,
+    y: int,
+    text: str,
+    font: ImageFont.FreeTypeFont,
+    color: tuple,
+) -> None:
+    """한 줄 텍스트를 공백 폭 SPACE_RATIO로 렌더링."""
+    cx = x
+    for char in text:
+        cb = font.getbbox(char)
+        cw = cb[2] - cb[0]
+        if char == " ":
+            cx += int(cw * SPACE_RATIO)
+        else:
+            draw.text((cx, y), char, fill=color, font=font)
+            cx += cw
 
 
 def _render_vertical(
@@ -143,18 +173,79 @@ def _render_vertical(
     x_start = x + box_w - col_w - max(0, (box_w - total_cols_w) // 2)
 
     col = 0
-    row = 0
+    cy = y
     for char in text:
         cx = x_start - col * col_w
-        cy = y + row * char_h
-        char_bbox = font.getbbox(char)
-        char_w = char_bbox[2] - char_bbox[0]
-        cx_centered = cx + (col_w - char_w) // 2
-        draw.text((cx_centered, cy), char, fill=text_color, font=font)
-        row += 1
-        if row >= chars_per_col:
-            row = 0
+        if char == " ":
+            cy += int(char_h * SPACE_RATIO)
+        else:
+            char_bbox = font.getbbox(char)
+            char_w = char_bbox[2] - char_bbox[0]
+            cx_centered = cx + (col_w - char_w) // 2
+            draw.text((cx_centered, cy), char, fill=text_color, font=font)
+            cy += char_h
+        if cy >= y + box_h:
+            cy = y
             col += 1
+
+
+def _should_cluster(
+    r1: tuple[int, int, int, int],
+    r2: tuple[int, int, int, int],
+) -> bool:
+    """두 bbox를 같은 클러스터로 묶어야 하면 True.
+
+    겹치거나, 간격이 두 bbox의 평균 짧은변보다 작으면 같은 클러스터.
+    """
+    x1a, y1a, x1b, y1b = r1
+    x2a, y2a, x2b, y2b = r2
+
+    # 겹침 체크
+    if not (x1b < x2a or x2b < x1a or y1b < y2a or y2b < y1a):
+        return True
+
+    # 두 bbox의 짧은변 평균
+    short1 = min(x1b - x1a, y1b - y1a)
+    short2 = min(x2b - x2a, y2b - y2a)
+    avg_short = (short1 + short2) / 2
+
+    gap_x = max(0, max(x1a, x2a) - min(x1b, x2b))
+    gap_y = max(0, max(y1a, y2a) - min(y1b, y2b))
+
+    return gap_x <= avg_short and gap_y <= avg_short
+
+
+def _cluster_bboxes(
+    bbox_rects: list[tuple[int, int, int, int]],
+) -> list[list[int]]:
+    """겹치거나 인접한 bbox들을 클러스터로 묶어 인덱스 그룹 반환."""
+    n = len(bbox_rects)
+    if n == 0:
+        return []
+    parent = list(range(n))
+
+    def find(x: int) -> int:
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    def union(a: int, b: int) -> None:
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[ra] = rb
+
+    for i in range(n):
+        for j in range(i + 1, n):
+            if _should_cluster(bbox_rects[i], bbox_rects[j]):
+                union(i, j)
+
+    clusters: dict[int, list[int]] = {}
+    for i in range(n):
+        root = find(i)
+        clusters.setdefault(root, []).append(i)
+
+    return list(clusters.values())
 
 
 def _erase_rect(
@@ -237,48 +328,71 @@ def run_render(
 
         bbox_rects = [_get_bbox_rect(b) for b in bboxes]
 
-        # 3단계: 전체 bounding rect 계산 (렌더링 영역)
-        all_x = [r[0] for r in bbox_rects] + [r[2] for r in bbox_rects]
-        all_y = [r[1] for r in bbox_rects] + [r[3] for r in bbox_rects]
-        rx1, ry1 = min(all_x), min(all_y)
-        rx2, ry2 = max(all_x), max(all_y)
-        rw, rh = rx2 - rx1, ry2 - ry1
+        # bbox를 클러스터로 분리 (멀리 떨어진 bbox는 별개 클러스터)
+        clusters = _cluster_bboxes(bbox_rects)
 
-        if rw <= 0 or rh <= 0:
-            continue
+        # 텍스트를 클러스터 면적 비율로 분배
+        cluster_rects = []
+        cluster_areas = []
+        for indices in clusters:
+            cx1 = min(bbox_rects[i][0] for i in indices)
+            cy1 = min(bbox_rects[i][1] for i in indices)
+            cx2 = max(bbox_rects[i][2] for i in indices)
+            cy2 = max(bbox_rects[i][3] for i in indices)
+            cluster_rects.append((cx1, cy1, cx2, cy2))
+            cluster_areas.append((cx2 - cx1) * (cy2 - cy1))
 
-        bg_color = _get_background_color(img, rx1, ry1, rx2, ry2)
-        text_color = _get_text_color(bg_color)
+        total_area = sum(cluster_areas) or 1
+        text_remaining = translated
 
-        # 3단계: item 내 bbox 다수결로 방향 결정
-        iv = sum(1 for r in bbox_rects if (r[3] - r[1]) > (r[2] - r[0]) * 1.5)
-        ih = len(bbox_rects) - iv
-        item_vertical = iv > ih
+        for ci, (cx1, cy1, cx2, cy2) in enumerate(cluster_rects):
+            cw, ch = cx2 - cx1, cy2 - cy1
+            if cw <= 0 or ch <= 0:
+                continue
 
-        if item_vertical:
-            _render_vertical(
-                draw,
-                translated,
-                rx1,
-                ry1,
-                rw,
-                rh,
-                text_color,
-                font_file,
-                suggested_size=global_font_size,
-            )
-        else:
-            font = ImageFont.truetype(font_file, global_font_size)
-            lines = _wrap_text(translated, font, rw)
-            total_text_h = int(len(lines) * global_font_size * LINE_SPACING)
-            y_offset = ry1 + (rh - total_text_h) // 2
+            # 텍스트 분배
+            if ci < len(cluster_rects) - 1:
+                ratio = cluster_areas[ci] / total_area
+                char_count = max(1, round(len(translated) * ratio))
+                chunk = text_remaining[:char_count]
+                text_remaining = text_remaining[char_count:]
+            else:
+                chunk = text_remaining
 
-            for line in lines:
-                line_bbox = font.getbbox(line)
-                line_w = line_bbox[2] - line_bbox[0]
-                x_offset = rx1 + (rw - line_w) // 2
-                draw.text((x_offset, y_offset), line, fill=text_color, font=font)
-                y_offset += int(global_font_size * LINE_SPACING)
+            if not chunk.strip():
+                continue
+
+            bg_color = _get_background_color(img, cx1, cy1, cx2, cy2)
+            text_color = _get_text_color(bg_color)
+
+            # 클러스터 내 bbox 다수결로 방향 결정
+            c_bboxes = [bbox_rects[i] for i in clusters[ci]]
+            iv = sum(1 for r in c_bboxes if (r[3] - r[1]) > (r[2] - r[0]) * 1.5)
+            item_vertical = iv > len(c_bboxes) - iv
+
+            if item_vertical:
+                _render_vertical(
+                    draw,
+                    chunk,
+                    cx1,
+                    cy1,
+                    cw,
+                    ch,
+                    text_color,
+                    font_file,
+                    suggested_size=global_font_size,
+                )
+            else:
+                font = ImageFont.truetype(font_file, global_font_size)
+                lines = _wrap_text(chunk, font, cw)
+                total_text_h = int(len(lines) * global_font_size * LINE_SPACING)
+                y_offset = cy1 + (ch - total_text_h) // 2
+
+                for line in lines:
+                    line_w = _measure_text(line, font)
+                    x_offset = cx1 + (cw - line_w) // 2
+                    _draw_text_line(draw, x_offset, y_offset, line, font, text_color)
+                    y_offset += int(global_font_size * LINE_SPACING)
 
     output_path = Path.cwd() / f"{img_path.stem}_rendered{img_path.suffix}"
     img.save(output_path)
