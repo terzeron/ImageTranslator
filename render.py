@@ -209,13 +209,30 @@ def run_render(
     img = Image.open(img_path).convert("RGB")
     draw = ImageDraw.Draw(img)
 
-    # 먼저 모든 translation item의 bbox를 지우기 (빈 번역 포함)
+    # 1단계: 모든 bbox 지우기 + 전체 폰트 크기 추정
+    all_estimated_sizes = []
     for item in tr_data["translations"]:
-        for bbox in item.get("bboxes", []):
+        original_texts = item.get("original_texts", [])
+        for idx, bbox in enumerate(item.get("bboxes", [])):
             bx1, by1, bx2, by2 = _get_bbox_rect(bbox)
             _erase_rect(draw, img, bx1, by1, bx2, by2)
+            bw, bh = bx2 - bx1, by2 - by1
+            if bw <= 0 or bh <= 0:
+                continue
+            n = len(original_texts[idx]) if idx < len(original_texts) else 1
+            n = max(1, n)
+            if bh > bw * 1.5:
+                all_estimated_sizes.append(min(bw, int(bh / n)))
+            else:
+                all_estimated_sizes.append(min(bh, int(bw / n)))
 
-    # 텍스트 렌더링
+    # 이미지 전체 통일 폰트 크기 (중앙값)
+    global_font_size = (
+        int(np.median(all_estimated_sizes)) if all_estimated_sizes else MIN_FONT_SIZE
+    )
+    global_font_size = max(MIN_FONT_SIZE, global_font_size)
+
+    # 2단계: 텍스트 렌더링
     for item in tr_data["translations"]:
         translated = item.get("translated", "")
         if not translated.strip():
@@ -226,25 +243,6 @@ def run_render(
             continue
 
         bbox_rects = [_get_bbox_rect(b) for b in bboxes]
-
-        # 2단계: 원본 텍스트 + bbox에서 폰트 크기 추정 → 중앙값 사용
-        original_texts = item.get("original_texts", [])
-        estimated_sizes = []
-        for idx, (bx1, by1, bx2, by2) in enumerate(bbox_rects):
-            bw, bh = bx2 - bx1, by2 - by1
-            if bw <= 0 or bh <= 0:
-                continue
-            n = len(original_texts[idx]) if idx < len(original_texts) else 1
-            n = max(1, n)
-            if bh > bw * 1.5:
-                estimated_sizes.append(min(bw, int(bh / n)))
-            else:
-                estimated_sizes.append(min(bh, int(bw / n)))
-        # 중앙값: 1~2글자 bbox의 과대추정 방지
-        font_size = (
-            int(np.median(estimated_sizes)) if estimated_sizes else MIN_FONT_SIZE
-        )
-        font_size = max(MIN_FONT_SIZE, font_size)
 
         # 3단계: 전체 bounding rect 계산 (렌더링 영역)
         all_x = [r[0] for r in bbox_rects] + [r[2] for r in bbox_rects]
@@ -259,7 +257,7 @@ def run_render(
         bg_color = _get_background_color(img, rx1, ry1, rx2, ry2)
         text_color = _get_text_color(bg_color)
 
-        # 4단계: 통일 폰트 크기로 전체 영역에 렌더링
+        # 3단계: 전체 통일 폰트 크기로 렌더링
         if rh > rw * 1.5:
             _render_vertical(
                 draw,
@@ -270,12 +268,12 @@ def run_render(
                 rh,
                 text_color,
                 font_file,
-                suggested_size=font_size,
+                suggested_size=global_font_size,
             )
         else:
-            font = ImageFont.truetype(font_file, font_size)
+            font = ImageFont.truetype(font_file, global_font_size)
             lines = _wrap_text(translated, font, rw)
-            total_text_h = int(len(lines) * font_size * LINE_SPACING)
+            total_text_h = int(len(lines) * global_font_size * LINE_SPACING)
             y_offset = ry1 + (rh - total_text_h) // 2
 
             for line in lines:
@@ -283,7 +281,7 @@ def run_render(
                 line_w = line_bbox[2] - line_bbox[0]
                 x_offset = rx1 + (rw - line_w) // 2
                 draw.text((x_offset, y_offset), line, fill=text_color, font=font)
-                y_offset += int(font_size * LINE_SPACING)
+                y_offset += int(global_font_size * LINE_SPACING)
 
     output_path = Path.cwd() / f"{img_path.stem}_rendered{img_path.suffix}"
     img.save(output_path)
