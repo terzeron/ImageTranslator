@@ -1,0 +1,5003 @@
+[
+  {
+    "file": "001-001-006-001-001.jpg",
+    "count": 16,
+    "avg_conf": 0.6655306331813335,
+    "avg_positive_conf": 0.760606437921524,
+    "quality": "good"
+  },
+  {
+    "file": "001-001-006-001-002.jpg",
+    "count": 11,
+    "avg_conf": 0.7119948159564625,
+    "avg_positive_conf": 0.7831942975521088,
+    "quality": "good"
+  },
+  {
+    "file": "001-001-006-001-003.jpg",
+    "count": 6,
+    "avg_conf": 0.704871654510498,
+    "avg_positive_conf": 0.8458459854125977,
+    "quality": "good"
+  },
+  {
+    "file": "001-001-006-001-004.jpg",
+    "count": 19,
+    "avg_conf": 0.5700153222209529,
+    "avg_positive_conf": 0.7220194081465403,
+    "quality": "good"
+  },
+  {
+    "file": "001-001-006-001-005.jpg",
+    "count": 26,
+    "avg_conf": 0.20706918892952111,
+    "avg_positive_conf": 0.48943626474250446,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-006.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "no_text"
+  },
+  {
+    "file": "001-001-006-001-007.jpg",
+    "count": 24,
+    "avg_conf": 0.3218867251028617,
+    "avg_positive_conf": 0.4828300876542926,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-008.jpg",
+    "count": 67,
+    "avg_conf": 0.35884540961749517,
+    "avg_positive_conf": 0.6327011169571626,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-009.jpg",
+    "count": 63,
+    "avg_conf": 0.19591858107892293,
+    "avg_positive_conf": 0.5142862753321727,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-010.jpg",
+    "count": 29,
+    "avg_conf": 0.3527392590868062,
+    "avg_positive_conf": 0.6819625675678254,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-011.jpg",
+    "count": 18,
+    "avg_conf": 0.32522257996930015,
+    "avg_positive_conf": 0.4878338699539502,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-012.jpg",
+    "count": 19,
+    "avg_conf": 0.4303647550313096,
+    "avg_positive_conf": 0.6289946419688371,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-013.jpg",
+    "count": 36,
+    "avg_conf": 0.3522842327753703,
+    "avg_positive_conf": 0.5514014078223187,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-014.jpg",
+    "count": 32,
+    "avg_conf": 0.33616874273866415,
+    "avg_positive_conf": 0.5661789351388028,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-015.jpg",
+    "count": 2,
+    "avg_conf": 0.7116978466510773,
+    "avg_positive_conf": 0.7116978466510773,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-016.jpg",
+    "count": 14,
+    "avg_conf": 0.4018910080194473,
+    "avg_positive_conf": 0.5626474112272263,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-017.jpg",
+    "count": 15,
+    "avg_conf": 0.43944866756598155,
+    "avg_positive_conf": 0.549310834457477,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-018.jpg",
+    "count": 24,
+    "avg_conf": 0.2628867408881585,
+    "avg_positive_conf": 0.5735710710287094,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-019.jpg",
+    "count": 8,
+    "avg_conf": 0.5376392025500536,
+    "avg_positive_conf": 0.5376392025500536,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-020.jpg",
+    "count": 1,
+    "avg_conf": 0.12496455758810043,
+    "avg_positive_conf": 0.12496455758810043,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-021.jpg",
+    "count": 22,
+    "avg_conf": 0.20138837092302062,
+    "avg_positive_conf": 0.40277674184604123,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-022.jpg",
+    "count": 50,
+    "avg_conf": 0.3126256310939789,
+    "avg_positive_conf": 0.5390097087827223,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-023.jpg",
+    "count": 23,
+    "avg_conf": 0.30932513915974164,
+    "avg_positive_conf": 0.4742985467116038,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-024.jpg",
+    "count": 30,
+    "avg_conf": 0.3649958650271098,
+    "avg_positive_conf": 0.6441103500478408,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-025.jpg",
+    "count": 5,
+    "avg_conf": 0.61675665974617,
+    "avg_positive_conf": 0.61675665974617,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-026.jpg",
+    "count": 2,
+    "avg_conf": 0.28467465937137604,
+    "avg_positive_conf": 0.28467465937137604,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-027.jpg",
+    "count": 25,
+    "avg_conf": 0.4670020541548729,
+    "avg_positive_conf": 0.5306841524487192,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-028.jpg",
+    "count": 21,
+    "avg_conf": 0.46957030040877207,
+    "avg_positive_conf": 0.6163110192865133,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-029.jpg",
+    "count": 4,
+    "avg_conf": 0.20677229017019272,
+    "avg_positive_conf": 0.41354458034038544,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-030.jpg",
+    "count": 9,
+    "avg_conf": 0.4161272777451409,
+    "avg_positive_conf": 0.535020785672324,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-031.jpg",
+    "count": 22,
+    "avg_conf": 0.32457440278746863,
+    "avg_positive_conf": 0.5492797585634085,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-032.jpg",
+    "count": 18,
+    "avg_conf": 0.203021845055951,
+    "avg_positive_conf": 0.4567991513758898,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-033.jpg",
+    "count": 22,
+    "avg_conf": 0.30959658460183576,
+    "avg_positive_conf": 0.6191931692036715,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-034.jpg",
+    "count": 42,
+    "avg_conf": 0.15949646596397674,
+    "avg_positive_conf": 0.5582376308739185,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-035.jpg",
+    "count": 4,
+    "avg_conf": 0.6926921308040619,
+    "avg_positive_conf": 0.9235895077387491,
+    "quality": "good"
+  },
+  {
+    "file": "001-001-006-001-036.jpg",
+    "count": 52,
+    "avg_conf": 0.2827561955469159,
+    "avg_positive_conf": 0.5070111092565388,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-037.jpg",
+    "count": 36,
+    "avg_conf": 0.4407838522973988,
+    "avg_positive_conf": 0.5877118030631984,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-038.jpg",
+    "count": 25,
+    "avg_conf": 0.2783364436030388,
+    "avg_positive_conf": 0.46389407267173133,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-039.jpg",
+    "count": 11,
+    "avg_conf": 0.315626552159136,
+    "avg_positive_conf": 0.433986509218812,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-040.jpg",
+    "count": 21,
+    "avg_conf": 0.43093270985853105,
+    "avg_positive_conf": 0.565599181689322,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-041.jpg",
+    "count": 17,
+    "avg_conf": 0.38064972618046927,
+    "avg_positive_conf": 0.4622175246477127,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-042.jpg",
+    "count": 31,
+    "avg_conf": 0.36732257662280915,
+    "avg_positive_conf": 0.5693499937653541,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-043.jpg",
+    "count": 6,
+    "avg_conf": 0.14413581416010857,
+    "avg_positive_conf": 0.4324074424803257,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-044.jpg",
+    "count": 15,
+    "avg_conf": 0.3231788178284963,
+    "avg_positive_conf": 0.6059602834284306,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-045.jpg",
+    "count": 8,
+    "avg_conf": 0.4502267800271511,
+    "avg_positive_conf": 0.6003023733695348,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-046.jpg",
+    "count": 24,
+    "avg_conf": 0.2591825596367319,
+    "avg_positive_conf": 0.565489221025597,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-047.jpg",
+    "count": 36,
+    "avg_conf": 0.2816242617037561,
+    "avg_positive_conf": 0.5632485234075122,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-048.jpg",
+    "count": 23,
+    "avg_conf": 0.30811416325361835,
+    "avg_positive_conf": 0.545125058064094,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-049.jpg",
+    "count": 3,
+    "avg_conf": 0.11697022120157878,
+    "avg_positive_conf": 0.35091066360473633,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-050.jpg",
+    "count": 9,
+    "avg_conf": 0.4828920099470351,
+    "avg_positive_conf": 0.6208611556461879,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-051.jpg",
+    "count": 16,
+    "avg_conf": 0.352665645070374,
+    "avg_positive_conf": 0.6269611467917761,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-052.jpg",
+    "count": 24,
+    "avg_conf": 0.2576028915743033,
+    "avg_positive_conf": 0.4121646265188853,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-053.jpg",
+    "count": 13,
+    "avg_conf": 0.2205310813509501,
+    "avg_positive_conf": 0.4095577225089073,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-054.jpg",
+    "count": 19,
+    "avg_conf": 0.310516462514275,
+    "avg_positive_conf": 0.5363466170701113,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-055.jpg",
+    "count": 26,
+    "avg_conf": 0.4395968879644687,
+    "avg_positive_conf": 0.6015536361619046,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-056.jpg",
+    "count": 39,
+    "avg_conf": 0.22815920689549202,
+    "avg_positive_conf": 0.46832679310127306,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-057.jpg",
+    "count": 31,
+    "avg_conf": 0.22975979072432365,
+    "avg_positive_conf": 0.47483690083026886,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-058.jpg",
+    "count": 14,
+    "avg_conf": 0.4807811294283186,
+    "avg_positive_conf": 0.673093581199646,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-059.jpg",
+    "count": 21,
+    "avg_conf": 0.4631667080379668,
+    "avg_positive_conf": 0.6484333912531535,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-060.jpg",
+    "count": 3,
+    "avg_conf": 0.6572562555472056,
+    "avg_positive_conf": 0.6572562555472056,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-061.jpg",
+    "count": 3,
+    "avg_conf": 0.4342172046502431,
+    "avg_positive_conf": 0.4342172046502431,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-062.jpg",
+    "count": 6,
+    "avg_conf": 0.11813007791837056,
+    "avg_positive_conf": 0.7087804675102234,
+    "quality": "good"
+  },
+  {
+    "file": "001-001-006-001-063.jpg",
+    "count": 8,
+    "avg_conf": 0.3241523294709623,
+    "avg_positive_conf": 0.6483046589419246,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-064.jpg",
+    "count": 22,
+    "avg_conf": 0.32640453868291597,
+    "avg_positive_conf": 0.5984083209186792,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-065.jpg",
+    "count": 42,
+    "avg_conf": 0.2033525960786002,
+    "avg_positive_conf": 0.5693872690200805,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-066.jpg",
+    "count": 30,
+    "avg_conf": 0.24736162275075912,
+    "avg_positive_conf": 0.49472324550151825,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-067.jpg",
+    "count": 44,
+    "avg_conf": 0.29309680143540556,
+    "avg_positive_conf": 0.4960099716599171,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-068.jpg",
+    "count": 6,
+    "avg_conf": 0.2737158214052518,
+    "avg_positive_conf": 0.41057373210787773,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-069.jpg",
+    "count": 5,
+    "avg_conf": 0.15606622099876405,
+    "avg_positive_conf": 0.3901655524969101,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-070.jpg",
+    "count": 3,
+    "avg_conf": 0.3808632791042328,
+    "avg_positive_conf": 0.3808632791042328,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-071.jpg",
+    "count": 35,
+    "avg_conf": 0.3614328520638602,
+    "avg_positive_conf": 0.6325074911117554,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-072.jpg",
+    "count": 14,
+    "avg_conf": 0.4477072720016752,
+    "avg_positive_conf": 0.482146292924881,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-073.jpg",
+    "count": 7,
+    "avg_conf": 0.2970748274986233,
+    "avg_positive_conf": 0.4159047584980726,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-074.jpg",
+    "count": 6,
+    "avg_conf": 0.26508775850137073,
+    "avg_positive_conf": 0.5301755170027415,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-075.jpg",
+    "count": 7,
+    "avg_conf": 0.4081429200513022,
+    "avg_positive_conf": 0.7142501100897789,
+    "quality": "good"
+  },
+  {
+    "file": "001-001-006-001-076.jpg",
+    "count": 31,
+    "avg_conf": 0.46180643213372075,
+    "avg_positive_conf": 0.5964999748393893,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-077.jpg",
+    "count": 46,
+    "avg_conf": 0.3055203569971997,
+    "avg_positive_conf": 0.5855806842446327,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-078.jpg",
+    "count": 56,
+    "avg_conf": 0.267882198627506,
+    "avg_positive_conf": 0.6250584634641806,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-079.jpg",
+    "count": 55,
+    "avg_conf": 0.3028409594839269,
+    "avg_positive_conf": 0.574353543848827,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-080.jpg",
+    "count": 18,
+    "avg_conf": 0.28994795804222423,
+    "avg_positive_conf": 0.47446029497818515,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-081.jpg",
+    "count": 24,
+    "avg_conf": 0.2621229824920495,
+    "avg_positive_conf": 0.6290951579809189,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-082.jpg",
+    "count": 50,
+    "avg_conf": 0.3027760565280914,
+    "avg_positive_conf": 0.6055521130561828,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-083.jpg",
+    "count": 45,
+    "avg_conf": 0.2717849595679177,
+    "avg_positive_conf": 0.5317531817633173,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-084.jpg",
+    "count": 29,
+    "avg_conf": 0.46250308998699846,
+    "avg_positive_conf": 0.5831560699836068,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-085.jpg",
+    "count": 8,
+    "avg_conf": 0.19005993753671646,
+    "avg_positive_conf": 0.5068265000979105,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-086.jpg",
+    "count": 43,
+    "avg_conf": 0.2659021177610686,
+    "avg_positive_conf": 0.5716895531862974,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-087.jpg",
+    "count": 10,
+    "avg_conf": 0.47238489612936974,
+    "avg_positive_conf": 0.6748355658990997,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-088.jpg",
+    "count": 59,
+    "avg_conf": 0.26836562800710484,
+    "avg_positive_conf": 0.4798052137096723,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-089.jpg",
+    "count": 58,
+    "avg_conf": 0.2124365798101343,
+    "avg_positive_conf": 0.5133884012078246,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-090.jpg",
+    "count": 51,
+    "avg_conf": 0.3677324439380683,
+    "avg_positive_conf": 0.6467018841669477,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-091.jpg",
+    "count": 36,
+    "avg_conf": 0.4542130016618305,
+    "avg_positive_conf": 0.6289103099933038,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-092.jpg",
+    "count": 36,
+    "avg_conf": 0.26128573881255257,
+    "avg_positive_conf": 0.5878929123282433,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-093.jpg",
+    "count": 13,
+    "avg_conf": 0.3177719987355746,
+    "avg_positive_conf": 0.5901479976517814,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-094.jpg",
+    "count": 8,
+    "avg_conf": 0.3387872986495495,
+    "avg_positive_conf": 0.4517163981993993,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-095.jpg",
+    "count": 22,
+    "avg_conf": 0.3575690503824841,
+    "avg_positive_conf": 0.5244346072276433,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-096.jpg",
+    "count": 28,
+    "avg_conf": 0.475221579096147,
+    "avg_positive_conf": 0.633628772128196,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-097.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "no_text"
+  },
+  {
+    "file": "001-001-006-001-098.jpg",
+    "count": 8,
+    "avg_conf": 0.40061851777136326,
+    "avg_positive_conf": 0.534158023695151,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-099.jpg",
+    "count": 7,
+    "avg_conf": 0.3435819681201662,
+    "avg_positive_conf": 0.6012684442102909,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-100.jpg",
+    "count": 65,
+    "avg_conf": 0.32182468003951586,
+    "avg_positive_conf": 0.581072338960237,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-101.jpg",
+    "count": 28,
+    "avg_conf": 0.2699852894459452,
+    "avg_positive_conf": 0.5815067772681897,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-102.jpg",
+    "count": 47,
+    "avg_conf": 0.31228533529854835,
+    "avg_positive_conf": 0.5241932413939919,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-103.jpg",
+    "count": 10,
+    "avg_conf": 0.06441202200949192,
+    "avg_positive_conf": 0.1610300550237298,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-104.jpg",
+    "count": 32,
+    "avg_conf": 0.2733081756159663,
+    "avg_positive_conf": 0.5144624482182896,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-105.jpg",
+    "count": 37,
+    "avg_conf": 0.2891316289031828,
+    "avg_positive_conf": 0.5094223937817982,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-106.jpg",
+    "count": 62,
+    "avg_conf": 0.26566514709303457,
+    "avg_positive_conf": 0.5490413039922715,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-107.jpg",
+    "count": 70,
+    "avg_conf": 0.36576706676610876,
+    "avg_positive_conf": 0.544759461141013,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-108.jpg",
+    "count": 21,
+    "avg_conf": 0.3875499608970824,
+    "avg_positive_conf": 0.6260422445260562,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-109.jpg",
+    "count": 27,
+    "avg_conf": 0.2138470036012155,
+    "avg_positive_conf": 0.5773869097232819,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-110.jpg",
+    "count": 33,
+    "avg_conf": 0.40710833036538324,
+    "avg_positive_conf": 0.584111952263376,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-111.jpg",
+    "count": 19,
+    "avg_conf": 0.4406539993850808,
+    "avg_positive_conf": 0.6440327683320413,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-112.jpg",
+    "count": 21,
+    "avg_conf": 0.30927933539663044,
+    "avg_positive_conf": 0.4996050802560953,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-113.jpg",
+    "count": 26,
+    "avg_conf": 0.33692323244535005,
+    "avg_positive_conf": 0.5152943555046531,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-114.jpg",
+    "count": 11,
+    "avg_conf": 0.5128726498647169,
+    "avg_positive_conf": 0.6268443498346541,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-115.jpg",
+    "count": 64,
+    "avg_conf": 0.3263381600845605,
+    "avg_positive_conf": 0.5644768174435641,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-116.jpg",
+    "count": 33,
+    "avg_conf": 0.2505539615045894,
+    "avg_positive_conf": 0.5167675456032157,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-117.jpg",
+    "count": 32,
+    "avg_conf": 0.47456335881724954,
+    "avg_positive_conf": 0.632751145089666,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-118.jpg",
+    "count": 29,
+    "avg_conf": 0.36528612827432566,
+    "avg_positive_conf": 0.5885165399975247,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-119.jpg",
+    "count": 7,
+    "avg_conf": 0.4371891958372934,
+    "avg_positive_conf": 0.5100540618101755,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-120.jpg",
+    "count": 4,
+    "avg_conf": 0.24831848591566086,
+    "avg_positive_conf": 0.4966369718313217,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-121.jpg",
+    "count": 2,
+    "avg_conf": 0.48260973393917084,
+    "avg_positive_conf": 0.48260973393917084,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-122.jpg",
+    "count": 4,
+    "avg_conf": 0.3312864387407899,
+    "avg_positive_conf": 0.4417152516543865,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-123.jpg",
+    "count": 20,
+    "avg_conf": 0.20539527237415314,
+    "avg_positive_conf": 0.4564339386092292,
+    "quality": "poor"
+  },
+  {
+    "file": "001-001-006-001-124.jpg",
+    "count": 40,
+    "avg_conf": 0.2635853994637728,
+    "avg_positive_conf": 0.5549166304500479,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-125.jpg",
+    "count": 27,
+    "avg_conf": 0.3484520078809173,
+    "avg_positive_conf": 0.522678011821376,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-126.jpg",
+    "count": 59,
+    "avg_conf": 0.2871368956767907,
+    "avg_positive_conf": 0.5841750636182982,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-127.jpg",
+    "count": 17,
+    "avg_conf": 0.3178149268907659,
+    "avg_positive_conf": 0.6003170841270022,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-128.jpg",
+    "count": 5,
+    "avg_conf": 0.5032017350196838,
+    "avg_positive_conf": 0.8386695583661398,
+    "quality": "good"
+  },
+  {
+    "file": "001-001-006-001-129.jpg",
+    "count": 60,
+    "avg_conf": 0.23489998082319896,
+    "avg_positive_conf": 0.6127825586692147,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-130.jpg",
+    "count": 38,
+    "avg_conf": 0.18528712540864944,
+    "avg_positive_conf": 0.5029221975377628,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-131.jpg",
+    "count": 46,
+    "avg_conf": 0.21601608719514764,
+    "avg_positive_conf": 0.6210462506860495,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-132.jpg",
+    "count": 39,
+    "avg_conf": 0.21988435815542173,
+    "avg_positive_conf": 0.5716993312040964,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-133.jpg",
+    "count": 29,
+    "avg_conf": 0.3048931473288043,
+    "avg_positive_conf": 0.5894600848356882,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-134.jpg",
+    "count": 49,
+    "avg_conf": 0.2749119188104357,
+    "avg_positive_conf": 0.5612785009046396,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-135.jpg",
+    "count": 67,
+    "avg_conf": 0.225037897367086,
+    "avg_positive_conf": 0.5384835401283843,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-136.jpg",
+    "count": 45,
+    "avg_conf": 0.13007605771223704,
+    "avg_positive_conf": 0.532129327004606,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-137.jpg",
+    "count": 56,
+    "avg_conf": 0.25762283535940306,
+    "avg_positive_conf": 0.6011199491719404,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-138.jpg",
+    "count": 65,
+    "avg_conf": 0.2949780445832473,
+    "avg_positive_conf": 0.5325992471641965,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-139.jpg",
+    "count": 37,
+    "avg_conf": 0.28777369655467366,
+    "avg_positive_conf": 0.5915348206957182,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-140.jpg",
+    "count": 58,
+    "avg_conf": 0.22533175233623076,
+    "avg_positive_conf": 0.5227696654200554,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-141.jpg",
+    "count": 51,
+    "avg_conf": 0.3011031267689724,
+    "avg_positive_conf": 0.6142503786087036,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-142.jpg",
+    "count": 27,
+    "avg_conf": 0.26676835975161306,
+    "avg_positive_conf": 0.5540573625610425,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-143.jpg",
+    "count": 8,
+    "avg_conf": 0.2626906745135784,
+    "avg_positive_conf": 0.7005084653695425,
+    "quality": "good"
+  },
+  {
+    "file": "001-001-006-001-144.jpg",
+    "count": 32,
+    "avg_conf": 0.34124315716326237,
+    "avg_positive_conf": 0.5747253173275998,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-145.jpg",
+    "count": 86,
+    "avg_conf": 0.3764698895257573,
+    "avg_positive_conf": 0.5222001693421795,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-001-006-001-146.jpg",
+    "count": 74,
+    "avg_conf": 0.38428279304423846,
+    "avg_positive_conf": 0.5924359726098677,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-007-010-001-001.jpg",
+    "count": 35,
+    "avg_conf": 0.8831253660576684,
+    "avg_positive_conf": 0.8831253660576684,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-002.jpg",
+    "count": 14,
+    "avg_conf": 0.9182297459670475,
+    "avg_positive_conf": 0.9182297459670475,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-003.jpg",
+    "count": 5,
+    "avg_conf": 0.955401885509491,
+    "avg_positive_conf": 0.955401885509491,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-004.jpg",
+    "count": 16,
+    "avg_conf": 0.7391894776374102,
+    "avg_positive_conf": 0.8447879744427544,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-005.jpg",
+    "count": 4,
+    "avg_conf": 0.6907622367143631,
+    "avg_positive_conf": 0.6907622367143631,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-007-010-001-006.jpg",
+    "count": 1,
+    "avg_conf": 0.0,
+    "avg_positive_conf": 0.0,
+    "quality": "poor"
+  },
+  {
+    "file": "001-007-010-001-007.jpg",
+    "count": 20,
+    "avg_conf": 0.6892632827162742,
+    "avg_positive_conf": 0.7658480919069715,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-008.jpg",
+    "count": 19,
+    "avg_conf": 0.721685390723379,
+    "avg_positive_conf": 0.8065895543378943,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-009.jpg",
+    "count": 18,
+    "avg_conf": 0.6027717565496763,
+    "avg_positive_conf": 0.6781182261183858,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-007-010-001-010.jpg",
+    "count": 29,
+    "avg_conf": 0.732363995293091,
+    "avg_positive_conf": 0.7585198522678444,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-011.jpg",
+    "count": 9,
+    "avg_conf": 0.7935755782657199,
+    "avg_positive_conf": 0.7935755782657199,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-012.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "no_text"
+  },
+  {
+    "file": "001-007-010-001-013.jpg",
+    "count": 33,
+    "avg_conf": 0.7436178760095076,
+    "avg_positive_conf": 0.7668559346348047,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-014.jpg",
+    "count": 22,
+    "avg_conf": 0.6797321818091653,
+    "avg_positive_conf": 0.7477053999900818,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-015.jpg",
+    "count": 9,
+    "avg_conf": 0.5181647423240874,
+    "avg_positive_conf": 0.6662118115595409,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-007-010-001-016.jpg",
+    "count": 46,
+    "avg_conf": 0.7019722814793172,
+    "avg_positive_conf": 0.7338801124556498,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-017.jpg",
+    "count": 35,
+    "avg_conf": 0.7847405288900647,
+    "avg_positive_conf": 0.807821132680949,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-018.jpg",
+    "count": 39,
+    "avg_conf": 0.6880015772886765,
+    "avg_positive_conf": 0.789178279831129,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-019.jpg",
+    "count": 52,
+    "avg_conf": 0.7299055435623114,
+    "avg_positive_conf": 0.7591017653048039,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-020.jpg",
+    "count": 62,
+    "avg_conf": 0.7140272269325871,
+    "avg_positive_conf": 0.750333696098651,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-021.jpg",
+    "count": 7,
+    "avg_conf": 0.7767242576394763,
+    "avg_positive_conf": 0.7767242576394763,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-022.jpg",
+    "count": 30,
+    "avg_conf": 0.7144593946635723,
+    "avg_positive_conf": 0.7144593946635723,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-023.jpg",
+    "count": 22,
+    "avg_conf": 0.7305505113168196,
+    "avg_positive_conf": 0.7653386309033349,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-024.jpg",
+    "count": 16,
+    "avg_conf": 0.7204809281975031,
+    "avg_positive_conf": 0.7685129900773366,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-025.jpg",
+    "count": 10,
+    "avg_conf": 0.7635432004928588,
+    "avg_positive_conf": 0.7635432004928588,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-026.jpg",
+    "count": 32,
+    "avg_conf": 0.711848228238523,
+    "avg_positive_conf": 0.7593047767877579,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-027.jpg",
+    "count": 16,
+    "avg_conf": 0.7176107591949403,
+    "avg_positive_conf": 0.7176107591949403,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-028.jpg",
+    "count": 23,
+    "avg_conf": 0.7577398095441901,
+    "avg_positive_conf": 0.7577398095441901,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-029.jpg",
+    "count": 20,
+    "avg_conf": 0.7177552960813045,
+    "avg_positive_conf": 0.7555318906118995,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-030.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "no_text"
+  },
+  {
+    "file": "001-007-010-001-031.jpg",
+    "count": 16,
+    "avg_conf": 0.7058671582490206,
+    "avg_positive_conf": 0.7529249687989553,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-032.jpg",
+    "count": 32,
+    "avg_conf": 0.7019907436333597,
+    "avg_positive_conf": 0.7487901265422503,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-033.jpg",
+    "count": 23,
+    "avg_conf": 0.8361784945363584,
+    "avg_positive_conf": 0.8361784945363584,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-034.jpg",
+    "count": 20,
+    "avg_conf": 0.7361174792051315,
+    "avg_positive_conf": 0.866020563770743,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-035.jpg",
+    "count": 47,
+    "avg_conf": 0.7725778707164399,
+    "avg_positive_conf": 0.7893730418189712,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-036.jpg",
+    "count": 41,
+    "avg_conf": 0.7757464331097719,
+    "avg_positive_conf": 0.7951400939375162,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-037.jpg",
+    "count": 14,
+    "avg_conf": 0.6743895411491394,
+    "avg_positive_conf": 0.7867877980073293,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-038.jpg",
+    "count": 13,
+    "avg_conf": 0.5823814421892166,
+    "avg_positive_conf": 0.7570958748459816,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-039.jpg",
+    "count": 14,
+    "avg_conf": 0.6696271928293365,
+    "avg_positive_conf": 0.7211369768931315,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-040.jpg",
+    "count": 40,
+    "avg_conf": 0.7456396665424109,
+    "avg_positive_conf": 0.7848838595183272,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-041.jpg",
+    "count": 14,
+    "avg_conf": 0.8264696896076202,
+    "avg_positive_conf": 0.8900442811158987,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-042.jpg",
+    "count": 3,
+    "avg_conf": 0.916145126024882,
+    "avg_positive_conf": 0.916145126024882,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-043.jpg",
+    "count": 10,
+    "avg_conf": 0.7897376656532288,
+    "avg_positive_conf": 0.8774862951702542,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-044.jpg",
+    "count": 2,
+    "avg_conf": 0.07963370531797409,
+    "avg_positive_conf": 0.15926741063594818,
+    "quality": "poor"
+  },
+  {
+    "file": "001-007-010-001-045.jpg",
+    "count": 10,
+    "avg_conf": 0.7045594245195389,
+    "avg_positive_conf": 0.7828438050217099,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-046.jpg",
+    "count": 2,
+    "avg_conf": 0.9570712447166443,
+    "avg_positive_conf": 0.9570712447166443,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-007-010-001-047.jpg",
+    "count": 27,
+    "avg_conf": 0.7954862161918923,
+    "avg_positive_conf": 0.8591251134872436,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-048.jpg",
+    "count": 45,
+    "avg_conf": 0.7045359919468562,
+    "avg_positive_conf": 0.7732712106733788,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-049.jpg",
+    "count": 54,
+    "avg_conf": 0.7747112291830557,
+    "avg_positive_conf": 0.7747112291830557,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-050.jpg",
+    "count": 4,
+    "avg_conf": 0.5906353294849396,
+    "avg_positive_conf": 0.7875137726465861,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-051.jpg",
+    "count": 5,
+    "avg_conf": 0.8920099020004273,
+    "avg_positive_conf": 0.8920099020004273,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-052.jpg",
+    "count": 16,
+    "avg_conf": 0.7633339259773493,
+    "avg_positive_conf": 0.7633339259773493,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-053.jpg",
+    "count": 42,
+    "avg_conf": 0.7633361745448339,
+    "avg_positive_conf": 0.7819541300215372,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-054.jpg",
+    "count": 27,
+    "avg_conf": 0.7107918880603932,
+    "avg_positive_conf": 0.7381300376011775,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-055.jpg",
+    "count": 28,
+    "avg_conf": 0.7461849472352436,
+    "avg_positive_conf": 0.8035837893302624,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-056.jpg",
+    "count": 1,
+    "avg_conf": 0.22615136206150055,
+    "avg_positive_conf": 0.22615136206150055,
+    "quality": "poor"
+  },
+  {
+    "file": "001-007-010-001-057.jpg",
+    "count": 47,
+    "avg_conf": 0.7120740370864563,
+    "avg_positive_conf": 0.7437217720680767,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-058.jpg",
+    "count": 20,
+    "avg_conf": 0.5655614014714956,
+    "avg_positive_conf": 0.6653663546723478,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-007-010-001-059.jpg",
+    "count": 28,
+    "avg_conf": 0.8068644180893898,
+    "avg_positive_conf": 0.8068644180893898,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-060.jpg",
+    "count": 54,
+    "avg_conf": 0.6835487589791969,
+    "avg_positive_conf": 0.7237575095073849,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-061.jpg",
+    "count": 53,
+    "avg_conf": 0.6974915474793821,
+    "avg_positive_conf": 0.7248441571844559,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-062.jpg",
+    "count": 85,
+    "avg_conf": 0.7104174651643809,
+    "avg_positive_conf": 0.7454998091231158,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-063.jpg",
+    "count": 52,
+    "avg_conf": 0.7293131858683549,
+    "avg_positive_conf": 0.7584857133030891,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-064.jpg",
+    "count": 34,
+    "avg_conf": 0.7532820802401093,
+    "avg_positive_conf": 0.7532820802401093,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-065.jpg",
+    "count": 58,
+    "avg_conf": 0.7019292207370544,
+    "avg_positive_conf": 0.7269981214776635,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-066.jpg",
+    "count": 71,
+    "avg_conf": 0.7193324169222738,
+    "avg_positive_conf": 0.7401826319055281,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-067.jpg",
+    "count": 36,
+    "avg_conf": 0.7015893600053258,
+    "avg_positive_conf": 0.7653702109149008,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-068.jpg",
+    "count": 43,
+    "avg_conf": 0.7769049884274949,
+    "avg_positive_conf": 0.7954027262471971,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-069.jpg",
+    "count": 42,
+    "avg_conf": 0.6695824315150579,
+    "avg_positive_conf": 0.7400647927271692,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-070.jpg",
+    "count": 23,
+    "avg_conf": 0.662149806385455,
+    "avg_positive_conf": 0.7614722773432732,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-071.jpg",
+    "count": 27,
+    "avg_conf": 0.6690611386740649,
+    "avg_positive_conf": 0.7225860297679901,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-072.jpg",
+    "count": 3,
+    "avg_conf": 0.6391310493151346,
+    "avg_positive_conf": 0.958696573972702,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-073.jpg",
+    "count": 41,
+    "avg_conf": 0.7054292145298748,
+    "avg_positive_conf": 0.741605071685253,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-074.jpg",
+    "count": 16,
+    "avg_conf": 0.7560478262603283,
+    "avg_positive_conf": 0.7560478262603283,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-075.jpg",
+    "count": 23,
+    "avg_conf": 0.6860682297012081,
+    "avg_positive_conf": 0.7172531492330811,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-076.jpg",
+    "count": 15,
+    "avg_conf": 0.7143718749284744,
+    "avg_positive_conf": 0.7143718749284744,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-077.jpg",
+    "count": 15,
+    "avg_conf": 0.49581524829069773,
+    "avg_positive_conf": 0.6761117022145878,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-007-010-001-078.jpg",
+    "count": 21,
+    "avg_conf": 0.7787157666115534,
+    "avg_positive_conf": 0.8606858473075064,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-079.jpg",
+    "count": 21,
+    "avg_conf": 0.5572488262717213,
+    "avg_positive_conf": 0.6159065974582183,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-007-010-001-080.jpg",
+    "count": 15,
+    "avg_conf": 0.7361507654190064,
+    "avg_positive_conf": 0.7887329629489354,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-081.jpg",
+    "count": 2,
+    "avg_conf": 0.07857436686754227,
+    "avg_positive_conf": 0.15714873373508453,
+    "quality": "poor"
+  },
+  {
+    "file": "001-007-010-001-082.jpg",
+    "count": 24,
+    "avg_conf": 0.7488185884431005,
+    "avg_positive_conf": 0.7813759183754092,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-083.jpg",
+    "count": 23,
+    "avg_conf": 0.7019841295221577,
+    "avg_positive_conf": 0.7019841295221577,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-084.jpg",
+    "count": 10,
+    "avg_conf": 0.4862839963287115,
+    "avg_positive_conf": 0.6078549954108894,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-007-010-001-085.jpg",
+    "count": 35,
+    "avg_conf": 0.6855058329445975,
+    "avg_positive_conf": 0.7739581984858359,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-086.jpg",
+    "count": 4,
+    "avg_conf": 0.7448094636201859,
+    "avg_positive_conf": 0.9930792848269144,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-087.jpg",
+    "count": 18,
+    "avg_conf": 0.7469653503762351,
+    "avg_positive_conf": 0.7469653503762351,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-088.jpg",
+    "count": 4,
+    "avg_conf": 0.8472427874803543,
+    "avg_positive_conf": 0.8472427874803543,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-089.jpg",
+    "count": 17,
+    "avg_conf": 0.7755096844014,
+    "avg_positive_conf": 0.7755096844014,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-090.jpg",
+    "count": 20,
+    "avg_conf": 0.7887170128524303,
+    "avg_positive_conf": 0.7887170128524303,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-091.jpg",
+    "count": 9,
+    "avg_conf": 0.7919172512160407,
+    "avg_positive_conf": 0.7919172512160407,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-092.jpg",
+    "count": 41,
+    "avg_conf": 0.7352994905739296,
+    "avg_positive_conf": 0.773007156757208,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-093.jpg",
+    "count": 9,
+    "avg_conf": 0.7351187831825681,
+    "avg_positive_conf": 0.7351187831825681,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-094.jpg",
+    "count": 21,
+    "avg_conf": 0.8209621012210846,
+    "avg_positive_conf": 0.8209621012210846,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-095.jpg",
+    "count": 5,
+    "avg_conf": 0.5497059524059296,
+    "avg_positive_conf": 0.687132440507412,
+    "quality": "moderate"
+  },
+  {
+    "file": "001-007-010-001-096.jpg",
+    "count": 37,
+    "avg_conf": 0.7729376361176774,
+    "avg_positive_conf": 0.8411380157751196,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-097.jpg",
+    "count": 26,
+    "avg_conf": 0.7934530893197427,
+    "avg_positive_conf": 0.7934530893197427,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-098.jpg",
+    "count": 7,
+    "avg_conf": 0.4145505002566746,
+    "avg_positive_conf": 0.7254633754491806,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-099.jpg",
+    "count": 14,
+    "avg_conf": 0.8588733843394688,
+    "avg_positive_conf": 0.8588733843394688,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-100.jpg",
+    "count": 3,
+    "avg_conf": 0.8001286188761393,
+    "avg_positive_conf": 0.8001286188761393,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-101.jpg",
+    "count": 50,
+    "avg_conf": 0.7267835557460784,
+    "avg_positive_conf": 0.7570662039021651,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-102.jpg",
+    "count": 9,
+    "avg_conf": 0.7167406876881918,
+    "avg_positive_conf": 0.8063332736492157,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-103.jpg",
+    "count": 40,
+    "avg_conf": 0.8712430462241173,
+    "avg_positive_conf": 0.8712430462241173,
+    "quality": "good"
+  },
+  {
+    "file": "001-007-010-001-104.jpg",
+    "count": 57,
+    "avg_conf": 0.8101597323752286,
+    "avg_positive_conf": 0.8246268704533577,
+    "quality": "good"
+  },
+  {
+    "file": "002-001.jpg",
+    "count": 36,
+    "avg_conf": 0.8845047040118111,
+    "avg_positive_conf": 0.9097762669835772,
+    "quality": "good"
+  },
+  {
+    "file": "002-002.jpg",
+    "count": 15,
+    "avg_conf": 0.9288262009620667,
+    "avg_positive_conf": 0.9288262009620667,
+    "quality": "good"
+  },
+  {
+    "file": "002-003.jpg",
+    "count": 5,
+    "avg_conf": 0.9666818141937256,
+    "avg_positive_conf": 0.9666818141937256,
+    "quality": "good"
+  },
+  {
+    "file": "002-004.jpg",
+    "count": 29,
+    "avg_conf": 0.9465241802149805,
+    "avg_positive_conf": 0.9465241802149805,
+    "quality": "good"
+  },
+  {
+    "file": "002-005.jpg",
+    "count": 8,
+    "avg_conf": 0.8267465680837631,
+    "avg_positive_conf": 0.8267465680837631,
+    "quality": "good"
+  },
+  {
+    "file": "002-006.jpg",
+    "count": 7,
+    "avg_conf": 0.6394598558545113,
+    "avg_positive_conf": 0.6394598558545113,
+    "quality": "moderate"
+  },
+  {
+    "file": "002-007.jpg",
+    "count": 3,
+    "avg_conf": 0.08668633302052815,
+    "avg_positive_conf": 0.13002949953079224,
+    "quality": "poor"
+  },
+  {
+    "file": "002-008.jpg",
+    "count": 4,
+    "avg_conf": 0.7220766907557845,
+    "avg_positive_conf": 0.7220766907557845,
+    "quality": "good"
+  },
+  {
+    "file": "002-009.jpg",
+    "count": 5,
+    "avg_conf": 0.6622742414474487,
+    "avg_positive_conf": 0.6622742414474487,
+    "quality": "moderate"
+  },
+  {
+    "file": "002-010.jpg",
+    "count": 14,
+    "avg_conf": 0.6759703574436051,
+    "avg_positive_conf": 0.7279680772469594,
+    "quality": "good"
+  },
+  {
+    "file": "002-011.jpg",
+    "count": 10,
+    "avg_conf": 0.7818206697702408,
+    "avg_positive_conf": 0.8686896330780454,
+    "quality": "good"
+  },
+  {
+    "file": "002-012.jpg",
+    "count": 9,
+    "avg_conf": 0.8896100785997179,
+    "avg_positive_conf": 0.8896100785997179,
+    "quality": "good"
+  },
+  {
+    "file": "002-013.jpg",
+    "count": 22,
+    "avg_conf": 0.7551764168522574,
+    "avg_positive_conf": 0.7911371986071268,
+    "quality": "good"
+  },
+  {
+    "file": "002-014.jpg",
+    "count": 64,
+    "avg_conf": 0.7750229756347835,
+    "avg_positive_conf": 0.8000237167842926,
+    "quality": "good"
+  },
+  {
+    "file": "002-015.jpg",
+    "count": 38,
+    "avg_conf": 0.7753086184200487,
+    "avg_positive_conf": 0.7753086184200487,
+    "quality": "good"
+  },
+  {
+    "file": "002-016.jpg",
+    "count": 20,
+    "avg_conf": 0.8312850631773472,
+    "avg_positive_conf": 0.8312850631773472,
+    "quality": "good"
+  },
+  {
+    "file": "002-017.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "[Errno 2] No such file or directory: '/home/terzeron/workspace/image_translate/tests/resources/manga/002-017.jpg'"
+  },
+  {
+    "file": "002-018.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-018.jpg"
+  },
+  {
+    "file": "002-019.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-019.jpg"
+  },
+  {
+    "file": "002-020.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-020.jpg"
+  },
+  {
+    "file": "002-021.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-021.jpg"
+  },
+  {
+    "file": "002-022.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-022.jpg"
+  },
+  {
+    "file": "002-023.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-023.jpg"
+  },
+  {
+    "file": "002-024.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-024.jpg"
+  },
+  {
+    "file": "002-025.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-025.jpg"
+  },
+  {
+    "file": "002-026.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-026.jpg"
+  },
+  {
+    "file": "002-027.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-027.jpg"
+  },
+  {
+    "file": "002-028.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-028.jpg"
+  },
+  {
+    "file": "002-029.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-029.jpg"
+  },
+  {
+    "file": "002-030.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-030.jpg"
+  },
+  {
+    "file": "002-031.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-031.jpg"
+  },
+  {
+    "file": "002-032.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-032.jpg"
+  },
+  {
+    "file": "002-033.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-033.jpg"
+  },
+  {
+    "file": "002-034.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-034.jpg"
+  },
+  {
+    "file": "002-035.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-035.jpg"
+  },
+  {
+    "file": "002-036.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-036.jpg"
+  },
+  {
+    "file": "002-037.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-037.jpg"
+  },
+  {
+    "file": "002-038.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-038.jpg"
+  },
+  {
+    "file": "002-039.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-039.jpg"
+  },
+  {
+    "file": "002-040.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-040.jpg"
+  },
+  {
+    "file": "002-041.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-041.jpg"
+  },
+  {
+    "file": "002-042.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-042.jpg"
+  },
+  {
+    "file": "002-043.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-043.jpg"
+  },
+  {
+    "file": "002-044.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-044.jpg"
+  },
+  {
+    "file": "002-045.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-045.jpg"
+  },
+  {
+    "file": "002-046.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-046.jpg"
+  },
+  {
+    "file": "002-047.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-047.jpg"
+  },
+  {
+    "file": "002-048.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-048.jpg"
+  },
+  {
+    "file": "002-049.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-049.jpg"
+  },
+  {
+    "file": "002-050.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-050.jpg"
+  },
+  {
+    "file": "002-051.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-051.jpg"
+  },
+  {
+    "file": "002-052.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-052.jpg"
+  },
+  {
+    "file": "002-053.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-053.jpg"
+  },
+  {
+    "file": "002-054.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-054.jpg"
+  },
+  {
+    "file": "002-055.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-055.jpg"
+  },
+  {
+    "file": "002-056.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-056.jpg"
+  },
+  {
+    "file": "002-057.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-057.jpg"
+  },
+  {
+    "file": "002-058.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-058.jpg"
+  },
+  {
+    "file": "002-059.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-059.jpg"
+  },
+  {
+    "file": "002-060.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-060.jpg"
+  },
+  {
+    "file": "002-061.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-061.jpg"
+  },
+  {
+    "file": "002-062.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-062.jpg"
+  },
+  {
+    "file": "002-063.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-063.jpg"
+  },
+  {
+    "file": "002-064.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-064.jpg"
+  },
+  {
+    "file": "002-065.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-065.jpg"
+  },
+  {
+    "file": "002-066.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-066.jpg"
+  },
+  {
+    "file": "002-067.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-067.jpg"
+  },
+  {
+    "file": "002-068.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-068.jpg"
+  },
+  {
+    "file": "002-069.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-069.jpg"
+  },
+  {
+    "file": "002-070.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-070.jpg"
+  },
+  {
+    "file": "002-071.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-071.jpg"
+  },
+  {
+    "file": "002-072.jpg",
+    "count": 1,
+    "avg_conf": 0.0,
+    "avg_positive_conf": 0.0,
+    "quality": "poor"
+  },
+  {
+    "file": "002-073.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-073.jpg"
+  },
+  {
+    "file": "002-074.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-074.jpg"
+  },
+  {
+    "file": "002-075.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-075.jpg"
+  },
+  {
+    "file": "002-076.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-076.jpg"
+  },
+  {
+    "file": "002-077.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-077.jpg"
+  },
+  {
+    "file": "002-078.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-078.jpg"
+  },
+  {
+    "file": "002-079.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-079.jpg"
+  },
+  {
+    "file": "002-080.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-080.jpg"
+  },
+  {
+    "file": "002-081.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-081.jpg"
+  },
+  {
+    "file": "002-082.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-082.jpg"
+  },
+  {
+    "file": "002-083.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-083.jpg"
+  },
+  {
+    "file": "002-084.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-084.jpg"
+  },
+  {
+    "file": "002-085.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-085.jpg"
+  },
+  {
+    "file": "002-086.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-086.jpg"
+  },
+  {
+    "file": "002-087.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-087.jpg"
+  },
+  {
+    "file": "002-088.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-088.jpg"
+  },
+  {
+    "file": "002-089.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-089.jpg"
+  },
+  {
+    "file": "002-090.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-090.jpg"
+  },
+  {
+    "file": "002-091.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-091.jpg"
+  },
+  {
+    "file": "002-092.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-092.jpg"
+  },
+  {
+    "file": "002-093.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-093.jpg"
+  },
+  {
+    "file": "002-094.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-094.jpg"
+  },
+  {
+    "file": "002-095.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-095.jpg"
+  },
+  {
+    "file": "002-096.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-096.jpg"
+  },
+  {
+    "file": "002-097.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-097.jpg"
+  },
+  {
+    "file": "002-098.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-098.jpg"
+  },
+  {
+    "file": "002-099.jpg",
+    "count": 7,
+    "avg_conf": 0.9036829386438642,
+    "avg_positive_conf": 0.9036829386438642,
+    "quality": "good"
+  },
+  {
+    "file": "002-100.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-100.jpg"
+  },
+  {
+    "file": "002-101.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-101.jpg"
+  },
+  {
+    "file": "002-102.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-102.jpg"
+  },
+  {
+    "file": "002-103.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-103.jpg"
+  },
+  {
+    "file": "002-104.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-104.jpg"
+  },
+  {
+    "file": "002-105.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-105.jpg"
+  },
+  {
+    "file": "002-106.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-106.jpg"
+  },
+  {
+    "file": "002-107.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-107.jpg"
+  },
+  {
+    "file": "002-108.jpg",
+    "count": 36,
+    "avg_conf": 0.6439489213128885,
+    "avg_positive_conf": 0.7024897323413328,
+    "quality": "good"
+  },
+  {
+    "file": "002-109.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-109.jpg"
+  },
+  {
+    "file": "002-110.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-110.jpg"
+  },
+  {
+    "file": "002-111.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-111.jpg"
+  },
+  {
+    "file": "002-112.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-112.jpg"
+  },
+  {
+    "file": "002-113.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-113.jpg"
+  },
+  {
+    "file": "002-114.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-114.jpg"
+  },
+  {
+    "file": "002-115.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-115.jpg"
+  },
+  {
+    "file": "002-116.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-116.jpg"
+  },
+  {
+    "file": "002-117.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-117.jpg"
+  },
+  {
+    "file": "002-118.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-118.jpg"
+  },
+  {
+    "file": "002-119.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-119.jpg"
+  },
+  {
+    "file": "002-120.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-120.jpg"
+  },
+  {
+    "file": "002-121.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-121.jpg"
+  },
+  {
+    "file": "002-122.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-122.jpg"
+  },
+  {
+    "file": "002-123.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-123.jpg"
+  },
+  {
+    "file": "002-124.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-124.jpg"
+  },
+  {
+    "file": "002-125.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-125.jpg"
+  },
+  {
+    "file": "002-126.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-126.jpg"
+  },
+  {
+    "file": "002-127.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-127.jpg"
+  },
+  {
+    "file": "002-128.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-128.jpg"
+  },
+  {
+    "file": "002-129.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-129.jpg"
+  },
+  {
+    "file": "002-130.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-130.jpg"
+  },
+  {
+    "file": "002-131.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-131.jpg"
+  },
+  {
+    "file": "002-132.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-132.jpg"
+  },
+  {
+    "file": "002-133.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-133.jpg"
+  },
+  {
+    "file": "002-134.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-134.jpg"
+  },
+  {
+    "file": "002-135.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-135.jpg"
+  },
+  {
+    "file": "002-136.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-136.jpg"
+  },
+  {
+    "file": "002-137.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-137.jpg"
+  },
+  {
+    "file": "002-138.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-138.jpg"
+  },
+  {
+    "file": "002-139.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-139.jpg"
+  },
+  {
+    "file": "002-140.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-140.jpg"
+  },
+  {
+    "file": "002-141.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-141.jpg"
+  },
+  {
+    "file": "002-142.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-142.jpg"
+  },
+  {
+    "file": "002-143.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-143.jpg"
+  },
+  {
+    "file": "002-144.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-144.jpg"
+  },
+  {
+    "file": "002-145.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-145.jpg"
+  },
+  {
+    "file": "002-146.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-146.jpg"
+  },
+  {
+    "file": "002-147.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-147.jpg"
+  },
+  {
+    "file": "002-148.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-148.jpg"
+  },
+  {
+    "file": "002-149.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-149.jpg"
+  },
+  {
+    "file": "002-150.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-150.jpg"
+  },
+  {
+    "file": "002-151.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-151.jpg"
+  },
+  {
+    "file": "002-152.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-152.jpg"
+  },
+  {
+    "file": "002-153.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-153.jpg"
+  },
+  {
+    "file": "002-154.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-154.jpg"
+  },
+  {
+    "file": "002-155.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-155.jpg"
+  },
+  {
+    "file": "002-156.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-156.jpg"
+  },
+  {
+    "file": "002-157.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-157.jpg"
+  },
+  {
+    "file": "002-158.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-158.jpg"
+  },
+  {
+    "file": "002-159.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-159.jpg"
+  },
+  {
+    "file": "002-160.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-160.jpg"
+  },
+  {
+    "file": "002-161.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-161.jpg"
+  },
+  {
+    "file": "002-162.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-162.jpg"
+  },
+  {
+    "file": "002-163.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-163.jpg"
+  },
+  {
+    "file": "002-164.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-164.jpg"
+  },
+  {
+    "file": "002-165.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-165.jpg"
+  },
+  {
+    "file": "002-166.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-166.jpg"
+  },
+  {
+    "file": "002-167.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-167.jpg"
+  },
+  {
+    "file": "002-168.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-168.jpg"
+  },
+  {
+    "file": "002-169.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-169.jpg"
+  },
+  {
+    "file": "002-170.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-170.jpg"
+  },
+  {
+    "file": "002-171.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-171.jpg"
+  },
+  {
+    "file": "002-172.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-172.jpg"
+  },
+  {
+    "file": "002-173.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-173.jpg"
+  },
+  {
+    "file": "002-174.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-174.jpg"
+  },
+  {
+    "file": "002-175.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-175.jpg"
+  },
+  {
+    "file": "002-176.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-176.jpg"
+  },
+  {
+    "file": "002-177.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-177.jpg"
+  },
+  {
+    "file": "002-178.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-178.jpg"
+  },
+  {
+    "file": "002-179.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-179.jpg"
+  },
+  {
+    "file": "002-180.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-180.jpg"
+  },
+  {
+    "file": "002-181.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-181.jpg"
+  },
+  {
+    "file": "002-182.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-182.jpg"
+  },
+  {
+    "file": "002-183.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-183.jpg"
+  },
+  {
+    "file": "002-184.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-184.jpg"
+  },
+  {
+    "file": "002-185.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-185.jpg"
+  },
+  {
+    "file": "002-186.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-186.jpg"
+  },
+  {
+    "file": "002-187.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-187.jpg"
+  },
+  {
+    "file": "002-188.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-188.jpg"
+  },
+  {
+    "file": "002-189.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-189.jpg"
+  },
+  {
+    "file": "002-190.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-190.jpg"
+  },
+  {
+    "file": "002-191.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-191.jpg"
+  },
+  {
+    "file": "002-192.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-192.jpg"
+  },
+  {
+    "file": "002-193.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-193.jpg"
+  },
+  {
+    "file": "002-194.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-194.jpg"
+  },
+  {
+    "file": "002-195.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-195.jpg"
+  },
+  {
+    "file": "002-196.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-196.jpg"
+  },
+  {
+    "file": "002-197.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-197.jpg"
+  },
+  {
+    "file": "002-198.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-198.jpg"
+  },
+  {
+    "file": "002-199.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-199.jpg"
+  },
+  {
+    "file": "002-200.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-200.jpg"
+  },
+  {
+    "file": "002-201.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-201.jpg"
+  },
+  {
+    "file": "002-202.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-202.jpg"
+  },
+  {
+    "file": "002-203.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-203.jpg"
+  },
+  {
+    "file": "002-204.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-204.jpg"
+  },
+  {
+    "file": "002-205.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-205.jpg"
+  },
+  {
+    "file": "002-206.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-206.jpg"
+  },
+  {
+    "file": "002-207.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-207.jpg"
+  },
+  {
+    "file": "002-208.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-208.jpg"
+  },
+  {
+    "file": "002-209.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-209.jpg"
+  },
+  {
+    "file": "002-210.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-210.jpg"
+  },
+  {
+    "file": "002-211.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-211.jpg"
+  },
+  {
+    "file": "002-212.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-212.jpg"
+  },
+  {
+    "file": "002-213.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-213.jpg"
+  },
+  {
+    "file": "002-214.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-214.jpg"
+  },
+  {
+    "file": "002-215.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-215.jpg"
+  },
+  {
+    "file": "002-216.jpg",
+    "count": 60,
+    "avg_conf": 0.7211415335536003,
+    "avg_positive_conf": 0.7211415335536003,
+    "quality": "good"
+  },
+  {
+    "file": "002-217.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-217.jpg"
+  },
+  {
+    "file": "002-218.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-218.jpg"
+  },
+  {
+    "file": "002-219.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-219.jpg"
+  },
+  {
+    "file": "002-220.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-220.jpg"
+  },
+  {
+    "file": "002-221.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-221.jpg"
+  },
+  {
+    "file": "002-222.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-222.jpg"
+  },
+  {
+    "file": "002-223.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-223.jpg"
+  },
+  {
+    "file": "002-224.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-224.jpg"
+  },
+  {
+    "file": "002-225.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-225.jpg"
+  },
+  {
+    "file": "002-226.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-226.jpg"
+  },
+  {
+    "file": "002-227.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-227.jpg"
+  },
+  {
+    "file": "002-228.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-228.jpg"
+  },
+  {
+    "file": "002-229.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-229.jpg"
+  },
+  {
+    "file": "002-230.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-230.jpg"
+  },
+  {
+    "file": "002-231.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-231.jpg"
+  },
+  {
+    "file": "002-232.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-232.jpg"
+  },
+  {
+    "file": "002-233.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-233.jpg"
+  },
+  {
+    "file": "002-234.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-234.jpg"
+  },
+  {
+    "file": "002-235.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-235.jpg"
+  },
+  {
+    "file": "002-236.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-236.jpg"
+  },
+  {
+    "file": "002-237.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/002-237.jpg"
+  },
+  {
+    "file": "003-001.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-001.jpg"
+  },
+  {
+    "file": "003-002.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-002.jpg"
+  },
+  {
+    "file": "003-003.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-003.jpg"
+  },
+  {
+    "file": "003-004.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-004.jpg"
+  },
+  {
+    "file": "003-005.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-005.jpg"
+  },
+  {
+    "file": "003-006.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-006.jpg"
+  },
+  {
+    "file": "003-007.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-007.jpg"
+  },
+  {
+    "file": "003-008.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-008.jpg"
+  },
+  {
+    "file": "003-009.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-009.jpg"
+  },
+  {
+    "file": "003-010.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-010.jpg"
+  },
+  {
+    "file": "003-011.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-011.jpg"
+  },
+  {
+    "file": "003-012.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-012.jpg"
+  },
+  {
+    "file": "003-013.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-013.jpg"
+  },
+  {
+    "file": "003-014.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-014.jpg"
+  },
+  {
+    "file": "003-015.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-015.jpg"
+  },
+  {
+    "file": "003-016.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-016.jpg"
+  },
+  {
+    "file": "003-017.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-017.jpg"
+  },
+  {
+    "file": "003-018.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-018.jpg"
+  },
+  {
+    "file": "003-019.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-019.jpg"
+  },
+  {
+    "file": "003-020.jpg",
+    "count": 19,
+    "avg_conf": 0.7951260648275676,
+    "avg_positive_conf": 0.8392997350957658,
+    "quality": "good"
+  },
+  {
+    "file": "003-021.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-021.jpg"
+  },
+  {
+    "file": "003-022.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-022.jpg"
+  },
+  {
+    "file": "003-023.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-023.jpg"
+  },
+  {
+    "file": "003-024.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-024.jpg"
+  },
+  {
+    "file": "003-025.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-025.jpg"
+  },
+  {
+    "file": "003-026.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-026.jpg"
+  },
+  {
+    "file": "003-027.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-027.jpg"
+  },
+  {
+    "file": "003-028.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-028.jpg"
+  },
+  {
+    "file": "003-029.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-029.jpg"
+  },
+  {
+    "file": "003-030.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-030.jpg"
+  },
+  {
+    "file": "003-031.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-031.jpg"
+  },
+  {
+    "file": "003-032.jpg",
+    "count": 31,
+    "avg_conf": 0.7589516899278087,
+    "avg_positive_conf": 0.7842500795920689,
+    "quality": "good"
+  },
+  {
+    "file": "003-033.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-033.jpg"
+  },
+  {
+    "file": "003-034.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-034.jpg"
+  },
+  {
+    "file": "003-035.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-035.jpg"
+  },
+  {
+    "file": "003-036.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-036.jpg"
+  },
+  {
+    "file": "003-037.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-037.jpg"
+  },
+  {
+    "file": "003-038.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-038.jpg"
+  },
+  {
+    "file": "003-039.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-039.jpg"
+  },
+  {
+    "file": "003-040.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-040.jpg"
+  },
+  {
+    "file": "003-041.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-041.jpg"
+  },
+  {
+    "file": "003-042.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-042.jpg"
+  },
+  {
+    "file": "003-043.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-043.jpg"
+  },
+  {
+    "file": "003-044.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-044.jpg"
+  },
+  {
+    "file": "003-045.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-045.jpg"
+  },
+  {
+    "file": "003-046.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-046.jpg"
+  },
+  {
+    "file": "003-047.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-047.jpg"
+  },
+  {
+    "file": "003-048.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-048.jpg"
+  },
+  {
+    "file": "003-049.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-049.jpg"
+  },
+  {
+    "file": "003-050.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-050.jpg"
+  },
+  {
+    "file": "003-051.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-051.jpg"
+  },
+  {
+    "file": "003-052.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-052.jpg"
+  },
+  {
+    "file": "003-053.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-053.jpg"
+  },
+  {
+    "file": "003-054.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-054.jpg"
+  },
+  {
+    "file": "003-055.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-055.jpg"
+  },
+  {
+    "file": "003-056.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-056.jpg"
+  },
+  {
+    "file": "003-057.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-057.jpg"
+  },
+  {
+    "file": "003-058.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-058.jpg"
+  },
+  {
+    "file": "003-059.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-059.jpg"
+  },
+  {
+    "file": "003-060.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-060.jpg"
+  },
+  {
+    "file": "003-061.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-061.jpg"
+  },
+  {
+    "file": "003-062.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-062.jpg"
+  },
+  {
+    "file": "003-063.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-063.jpg"
+  },
+  {
+    "file": "003-064.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-064.jpg"
+  },
+  {
+    "file": "003-065.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-065.jpg"
+  },
+  {
+    "file": "003-066.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-066.jpg"
+  },
+  {
+    "file": "003-067.jpg",
+    "count": 7,
+    "avg_conf": 0.9394994292940412,
+    "avg_positive_conf": 0.9394994292940412,
+    "quality": "good"
+  },
+  {
+    "file": "003-068.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-068.jpg"
+  },
+  {
+    "file": "003-069.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-069.jpg"
+  },
+  {
+    "file": "003-070.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-070.jpg"
+  },
+  {
+    "file": "003-071.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-071.jpg"
+  },
+  {
+    "file": "003-072.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-072.jpg"
+  },
+  {
+    "file": "003-073.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-073.jpg"
+  },
+  {
+    "file": "003-074.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-074.jpg"
+  },
+  {
+    "file": "003-075.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-075.jpg"
+  },
+  {
+    "file": "003-076.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-076.jpg"
+  },
+  {
+    "file": "003-077.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-077.jpg"
+  },
+  {
+    "file": "003-078.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-078.jpg"
+  },
+  {
+    "file": "003-079.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-079.jpg"
+  },
+  {
+    "file": "003-080.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-080.jpg"
+  },
+  {
+    "file": "003-081.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-081.jpg"
+  },
+  {
+    "file": "003-082.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-082.jpg"
+  },
+  {
+    "file": "003-083.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-083.jpg"
+  },
+  {
+    "file": "003-084.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-084.jpg"
+  },
+  {
+    "file": "003-085.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-085.jpg"
+  },
+  {
+    "file": "003-086.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-086.jpg"
+  },
+  {
+    "file": "003-087.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-087.jpg"
+  },
+  {
+    "file": "003-088.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-088.jpg"
+  },
+  {
+    "file": "003-089.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-089.jpg"
+  },
+  {
+    "file": "003-090.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-090.jpg"
+  },
+  {
+    "file": "003-091.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-091.jpg"
+  },
+  {
+    "file": "003-092.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-092.jpg"
+  },
+  {
+    "file": "003-093.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-093.jpg"
+  },
+  {
+    "file": "003-094.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-094.jpg"
+  },
+  {
+    "file": "003-095.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-095.jpg"
+  },
+  {
+    "file": "003-096.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-096.jpg"
+  },
+  {
+    "file": "003-097.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-097.jpg"
+  },
+  {
+    "file": "003-098.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-098.jpg"
+  },
+  {
+    "file": "003-099.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-099.jpg"
+  },
+  {
+    "file": "003-100.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-100.jpg"
+  },
+  {
+    "file": "003-101.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-101.jpg"
+  },
+  {
+    "file": "003-102.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-102.jpg"
+  },
+  {
+    "file": "003-103.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-103.jpg"
+  },
+  {
+    "file": "003-104.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-104.jpg"
+  },
+  {
+    "file": "003-105.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-105.jpg"
+  },
+  {
+    "file": "003-106.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-106.jpg"
+  },
+  {
+    "file": "003-107.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-107.jpg"
+  },
+  {
+    "file": "003-108.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-108.jpg"
+  },
+  {
+    "file": "003-109.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-109.jpg"
+  },
+  {
+    "file": "003-110.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-110.jpg"
+  },
+  {
+    "file": "003-111.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-111.jpg"
+  },
+  {
+    "file": "003-112.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-112.jpg"
+  },
+  {
+    "file": "003-113.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-113.jpg"
+  },
+  {
+    "file": "003-114.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-114.jpg"
+  },
+  {
+    "file": "003-115.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-115.jpg"
+  },
+  {
+    "file": "003-116.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-116.jpg"
+  },
+  {
+    "file": "003-117.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-117.jpg"
+  },
+  {
+    "file": "003-118.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-118.jpg"
+  },
+  {
+    "file": "003-119.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-119.jpg"
+  },
+  {
+    "file": "003-120.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-120.jpg"
+  },
+  {
+    "file": "003-121.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-121.jpg"
+  },
+  {
+    "file": "003-122.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-122.jpg"
+  },
+  {
+    "file": "003-123.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-123.jpg"
+  },
+  {
+    "file": "003-124.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-124.jpg"
+  },
+  {
+    "file": "003-125.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-125.jpg"
+  },
+  {
+    "file": "003-126.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-126.jpg"
+  },
+  {
+    "file": "003-127.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-127.jpg"
+  },
+  {
+    "file": "003-128.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-128.jpg"
+  },
+  {
+    "file": "003-129.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-129.jpg"
+  },
+  {
+    "file": "003-130.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-130.jpg"
+  },
+  {
+    "file": "003-131.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-131.jpg"
+  },
+  {
+    "file": "003-132.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-132.jpg"
+  },
+  {
+    "file": "003-133.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-133.jpg"
+  },
+  {
+    "file": "003-134.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-134.jpg"
+  },
+  {
+    "file": "003-135.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-135.jpg"
+  },
+  {
+    "file": "003-136.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-136.jpg"
+  },
+  {
+    "file": "003-137.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-137.jpg"
+  },
+  {
+    "file": "003-138.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-138.jpg"
+  },
+  {
+    "file": "003-139.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-139.jpg"
+  },
+  {
+    "file": "003-140.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-140.jpg"
+  },
+  {
+    "file": "003-141.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-141.jpg"
+  },
+  {
+    "file": "003-142.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-142.jpg"
+  },
+  {
+    "file": "003-143.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-143.jpg"
+  },
+  {
+    "file": "003-144.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-144.jpg"
+  },
+  {
+    "file": "003-145.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-145.jpg"
+  },
+  {
+    "file": "003-146.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-146.jpg"
+  },
+  {
+    "file": "003-147.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-147.jpg"
+  },
+  {
+    "file": "003-148.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-148.jpg"
+  },
+  {
+    "file": "003-149.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-149.jpg"
+  },
+  {
+    "file": "003-150.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-150.jpg"
+  },
+  {
+    "file": "003-151.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-151.jpg"
+  },
+  {
+    "file": "003-152.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-152.jpg"
+  },
+  {
+    "file": "003-153.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-153.jpg"
+  },
+  {
+    "file": "003-154.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-154.jpg"
+  },
+  {
+    "file": "003-155.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-155.jpg"
+  },
+  {
+    "file": "003-156.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-156.jpg"
+  },
+  {
+    "file": "003-157.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-157.jpg"
+  },
+  {
+    "file": "003-158.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-158.jpg"
+  },
+  {
+    "file": "003-159.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-159.jpg"
+  },
+  {
+    "file": "003-160.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-160.jpg"
+  },
+  {
+    "file": "003-161.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-161.jpg"
+  },
+  {
+    "file": "003-162.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-162.jpg"
+  },
+  {
+    "file": "003-163.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-163.jpg"
+  },
+  {
+    "file": "003-164.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-164.jpg"
+  },
+  {
+    "file": "003-165.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-165.jpg"
+  },
+  {
+    "file": "003-166.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-166.jpg"
+  },
+  {
+    "file": "003-167.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-167.jpg"
+  },
+  {
+    "file": "003-168.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-168.jpg"
+  },
+  {
+    "file": "003-169.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-169.jpg"
+  },
+  {
+    "file": "003-170.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-170.jpg"
+  },
+  {
+    "file": "003-171.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-171.jpg"
+  },
+  {
+    "file": "003-172.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-172.jpg"
+  },
+  {
+    "file": "003-173.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-173.jpg"
+  },
+  {
+    "file": "003-174.jpg",
+    "count": 45,
+    "avg_conf": 0.7178088168303172,
+    "avg_positive_conf": 0.7341226535764608,
+    "quality": "good"
+  },
+  {
+    "file": "003-175.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-175.jpg"
+  },
+  {
+    "file": "003-176.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-176.jpg"
+  },
+  {
+    "file": "003-177.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-177.jpg"
+  },
+  {
+    "file": "003-178.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-178.jpg"
+  },
+  {
+    "file": "003-179.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-179.jpg"
+  },
+  {
+    "file": "003-180.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-180.jpg"
+  },
+  {
+    "file": "003-181.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-181.jpg"
+  },
+  {
+    "file": "003-182.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-182.jpg"
+  },
+  {
+    "file": "003-183.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-183.jpg"
+  },
+  {
+    "file": "003-184.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-184.jpg"
+  },
+  {
+    "file": "003-185.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-185.jpg"
+  },
+  {
+    "file": "003-186.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-186.jpg"
+  },
+  {
+    "file": "003-187.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-187.jpg"
+  },
+  {
+    "file": "003-188.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-188.jpg"
+  },
+  {
+    "file": "003-189.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-189.jpg"
+  },
+  {
+    "file": "003-190.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-190.jpg"
+  },
+  {
+    "file": "003-191.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-191.jpg"
+  },
+  {
+    "file": "003-192.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-192.jpg"
+  },
+  {
+    "file": "003-193.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-193.jpg"
+  },
+  {
+    "file": "003-194.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-194.jpg"
+  },
+  {
+    "file": "003-195.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-195.jpg"
+  },
+  {
+    "file": "003-196.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-196.jpg"
+  },
+  {
+    "file": "003-197.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-197.jpg"
+  },
+  {
+    "file": "003-198.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-198.jpg"
+  },
+  {
+    "file": "003-199.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-199.jpg"
+  },
+  {
+    "file": "003-200.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-200.jpg"
+  },
+  {
+    "file": "003-201.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-201.jpg"
+  },
+  {
+    "file": "003-202.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-202.jpg"
+  },
+  {
+    "file": "003-203.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-203.jpg"
+  },
+  {
+    "file": "003-204.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-204.jpg"
+  },
+  {
+    "file": "003-205.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-205.jpg"
+  },
+  {
+    "file": "003-206.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-206.jpg"
+  },
+  {
+    "file": "003-207.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-207.jpg"
+  },
+  {
+    "file": "003-208.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-208.jpg"
+  },
+  {
+    "file": "003-209.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-209.jpg"
+  },
+  {
+    "file": "003-210.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-210.jpg"
+  },
+  {
+    "file": "003-211.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-211.jpg"
+  },
+  {
+    "file": "003-212.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-212.jpg"
+  },
+  {
+    "file": "003-213.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-213.jpg"
+  },
+  {
+    "file": "003-214.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-214.jpg"
+  },
+  {
+    "file": "003-215.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-215.jpg"
+  },
+  {
+    "file": "003-216.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-216.jpg"
+  },
+  {
+    "file": "003-217.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-217.jpg"
+  },
+  {
+    "file": "003-218.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-218.jpg"
+  },
+  {
+    "file": "003-219.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-219.jpg"
+  },
+  {
+    "file": "003-220.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-220.jpg"
+  },
+  {
+    "file": "003-221.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-221.jpg"
+  },
+  {
+    "file": "003-222.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-222.jpg"
+  },
+  {
+    "file": "003-223.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-223.jpg"
+  },
+  {
+    "file": "003-224.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-224.jpg"
+  },
+  {
+    "file": "003-225.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-225.jpg"
+  },
+  {
+    "file": "003-226.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-226.jpg"
+  },
+  {
+    "file": "003-227.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-227.jpg"
+  },
+  {
+    "file": "003-228.jpg",
+    "count": 0,
+    "avg_conf": 0.0,
+    "quality": "error",
+    "error": "파일을 찾을 수 없습니다: /home/terzeron/workspace/image_translate/tests/resources/manga/003-228.jpg"
+  }
+]
