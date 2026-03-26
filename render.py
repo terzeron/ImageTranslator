@@ -250,8 +250,12 @@ def run_render(
         bg_color = _get_background_color(img, rx1, ry1, rx2, ry2)
         text_color = _get_text_color(bg_color)
 
-        # 3단계: 전체 통일 폰트 크기로 렌더링
-        if rh > rw * 1.5:
+        # 3단계: item 내 bbox 다수결로 방향 결정
+        iv = sum(1 for r in bbox_rects if (r[3] - r[1]) > (r[2] - r[0]) * 1.5)
+        ih = len(bbox_rects) - iv
+        item_vertical = iv > ih
+
+        if item_vertical:
             _render_vertical(
                 draw,
                 translated,
