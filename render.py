@@ -8,8 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 DEFAULT_FONT = Path(__file__).resolve().parent / "fonts" / "NanumBarunGothic.ttf"
 MIN_FONT_SIZE = 8
 LINE_SPACING = 1.2
-ERASE_MARGIN = 3
-CLUSTER_GAP = 5  # bbox 간 이 거리 이하면 같은 클러스터로 묶음
+ERASE_MARGIN = 5  # bbox 지우기 시 추가 마진 (px)
 
 
 def _get_bbox_rect(bbox: list[list[float]]) -> tuple[int, int, int, int]:
@@ -22,8 +21,8 @@ def _get_bbox_rect(bbox: list[list[float]]) -> tuple[int, int, int, int]:
 def _get_background_color(
     img: Image.Image, x1: int, y1: int, x2: int, y2: int
 ) -> tuple[int, ...]:
-    """bbox 외곽 5px 띠의 중앙값(median)으로 배경색 결정."""
-    margin = 5
+    """bbox 외곽 띠의 중앙값(median)으로 배경색 결정."""
+    margin = 7
     w, h = img.size
     pixels = []
 
@@ -109,36 +108,55 @@ def _wrap_text(text: str, font: ImageFont.FreeTypeFont, max_width: int) -> list[
     return lines or [""]
 
 
-def _erase_bbox(
+def _erase_rect(
     draw: ImageDraw.ImageDraw,
     img: Image.Image,
     x1: int,
     y1: int,
     x2: int,
     y2: int,
+    margin: int = ERASE_MARGIN,
 ) -> tuple[int, ...]:
-    """bbox 영역을 마진 포함하여 배경색으로 지우고, 사용한 배경색 반환."""
+    """영역을 마진 포함하여 배경색으로 지우고, 사용한 배경색 반환."""
     w, h = img.size
     bg_color = _get_background_color(img, x1, y1, x2, y2)
-    ex1 = max(0, x1 - ERASE_MARGIN)
-    ey1 = max(0, y1 - ERASE_MARGIN)
-    ex2 = min(w, x2 + ERASE_MARGIN)
-    ey2 = min(h, y2 + ERASE_MARGIN)
+    ex1 = max(0, x1 - margin)
+    ey1 = max(0, y1 - margin)
+    ex2 = min(w, x2 + margin)
+    ey2 = min(h, y2 + margin)
     draw.rectangle([ex1, ey1, ex2, ey2], fill=bg_color)
     return bg_color
 
 
-def _rects_overlap_or_adjacent(
+def _should_cluster(
     r1: tuple[int, int, int, int],
     r2: tuple[int, int, int, int],
-    gap: int = CLUSTER_GAP,
 ) -> bool:
-    """두 rect가 겹치거나 gap 이하로 인접하면 True."""
+    """두 rect를 같은 클러스터로 묶어야 하면 True.
+
+    겹치거나, 간격이 두 bbox의 평균 폭/높이보다 작으면 같은 클러스터.
+    """
     x1a, y1a, x1b, y1b = r1
     x2a, y2a, x2b, y2b = r2
-    return not (
-        x1b + gap < x2a or x2b + gap < x1a or y1b + gap < y2a or y2b + gap < y1a
-    )
+
+    # 겹침 체크
+    if not (x1b < x2a or x2b < x1a or y1b < y2a or y2b < y1a):
+        return True
+
+    # 두 bbox의 평균 크기 기반 동적 gap
+    w1, h1 = x1b - x1a, y1b - y1a
+    w2, h2 = x2b - x2a, y2b - y2a
+    avg_w = (w1 + w2) / 2
+    avg_h = (h1 + h2) / 2
+
+    gap_x = max(0, max(x1a, x2a) - min(x1b, x2b))
+    gap_y = max(0, max(y1a, y2a) - min(y1b, y2b))
+
+    # x축 간격이 평균 폭 이하이고 y축이 겹치거나 근접
+    if gap_x <= avg_w and gap_y <= avg_h:
+        return True
+
+    return False
 
 
 def _cluster_bboxes(
@@ -164,7 +182,7 @@ def _cluster_bboxes(
 
     for i in range(n):
         for j in range(i + 1, n):
-            if _rects_overlap_or_adjacent(bbox_rects[i], bbox_rects[j]):
+            if _should_cluster(bbox_rects[i], bbox_rects[j]):
                 union(i, j)
 
     clusters: dict[int, list[int]] = {}
@@ -207,15 +225,13 @@ def run_render(
         if not bboxes:
             continue
 
-        # 1단계: 모든 개별 bbox를 마진 포함하여 배경색으로 지우기
+        # 1단계: 개별 bbox를 rect로 변환
         bbox_rects = [_get_bbox_rect(b) for b in bboxes]
-        for bx1, by1, bx2, by2 in bbox_rects:
-            _erase_bbox(draw, img, bx1, by1, bx2, by2)
 
-        # 2단계: 겹치거나 인접한 bbox들을 클러스터로 묶기
+        # 2단계: 클러스터링
         clusters = _cluster_bboxes(bbox_rects)
 
-        # 번역 텍스트를 클러스터 면적 비율로 분배
+        # 3단계: 클러스터별로 처리
         cluster_rects = []
         cluster_areas = []
         for indices in clusters:
@@ -227,15 +243,19 @@ def run_render(
             cluster_areas.append((cx2 - cx1) * (cy2 - cy1))
 
         total_area = sum(cluster_areas) or 1
-        text_remaining = translated
 
+        # 4단계: 클러스터 전체 영역을 배경색으로 지우기 (개별 bbox 아닌 클러스터 단위)
+        for cx1, cy1, cx2, cy2 in cluster_rects:
+            _erase_rect(draw, img, cx1, cy1, cx2, cy2)
+
+        # 5단계: 클러스터별 텍스트 렌더링
+        text_remaining = translated
         for ci, (cx1, cy1, cx2, cy2) in enumerate(cluster_rects):
             cw = cx2 - cx1
             ch = cy2 - cy1
             if cw <= 0 or ch <= 0:
                 continue
 
-            # 이 클러스터에 할당할 텍스트
             if ci < len(cluster_rects) - 1:
                 ratio = cluster_areas[ci] / total_area
                 char_count = max(1, round(len(translated) * ratio))
@@ -250,11 +270,9 @@ def run_render(
             bg_color = _get_background_color(img, cx1, cy1, cx2, cy2)
             text_color = _get_text_color(bg_color)
 
-            # 폰트 크기 결정 (클러스터 bounding rect 기준)
             font_size, lines = _calc_font_size(chunk, cw, ch, font_file)
             font = ImageFont.truetype(font_file, font_size)
 
-            # 텍스트를 클러스터 영역 중앙에 렌더링
             total_text_h = int(len(lines) * font_size * LINE_SPACING)
             y_offset = cy1 + (ch - total_text_h) // 2
 

@@ -429,18 +429,19 @@ class TestClusterBboxes:
         assert len(clusters) == 1
         assert sorted(clusters[0]) == [0, 1]
 
-    def test_adjacent_within_gap(self):
-        from render import _cluster_bboxes, CLUSTER_GAP
+    def test_nearby_within_bbox_size(self):
+        from render import _cluster_bboxes
 
-        # gap = CLUSTER_GAP 이하면 같은 클러스터
-        rects = [(0, 0, 10, 10), (10 + CLUSTER_GAP, 0, 20 + CLUSTER_GAP, 10)]
+        # 10x10 bbox, 간격 8px → 평균 폭(10)보다 작으므로 같은 클러스터
+        rects = [(0, 0, 10, 10), (18, 0, 28, 10)]
         clusters = _cluster_bboxes(rects)
         assert len(clusters) == 1
 
-    def test_beyond_gap_separate(self):
-        from render import _cluster_bboxes, CLUSTER_GAP
+    def test_far_apart_separate(self):
+        from render import _cluster_bboxes
 
-        rects = [(0, 0, 10, 10), (10 + CLUSTER_GAP + 2, 0, 30, 10)]
+        # 10x10 bbox, 간격 50px → 평균 폭(10)보다 훨씬 크므로 별개
+        rects = [(0, 0, 10, 10), (60, 0, 70, 10)]
         clusters = _cluster_bboxes(rects)
         assert len(clusters) == 2
 
@@ -468,21 +469,29 @@ class TestClusterBboxes:
         assert clusters == []
 
 
-class TestRectsOverlapOrAdjacent:
+class TestShouldCluster:
     def test_overlapping(self):
-        from render import _rects_overlap_or_adjacent
+        from render import _should_cluster
 
-        assert _rects_overlap_or_adjacent((0, 0, 20, 20), (10, 10, 30, 30))
+        assert _should_cluster((0, 0, 20, 20), (10, 10, 30, 30))
 
-    def test_adjacent(self):
-        from render import _rects_overlap_or_adjacent
+    def test_nearby_within_avg_size(self):
+        from render import _should_cluster
 
-        assert _rects_overlap_or_adjacent((0, 0, 10, 10), (12, 0, 22, 10), gap=5)
+        # 20x20 bbox, 간격 15px → 평균 폭(20)보다 작으므로 클러스터
+        assert _should_cluster((0, 0, 20, 20), (35, 0, 55, 20))
 
     def test_far_apart(self):
-        from render import _rects_overlap_or_adjacent
+        from render import _should_cluster
 
-        assert not _rects_overlap_or_adjacent((0, 0, 10, 10), (100, 100, 110, 110))
+        assert not _should_cluster((0, 0, 10, 10), (100, 100, 110, 110))
+
+    def test_same_column_vertical_text(self):
+        """세로쓰기 말풍선: 같은 열에 약간 떨어진 bbox → 클러스터"""
+        from render import _should_cluster
+
+        # 20x80 bbox, y방향 간격 15px → 평균 높이(80)보다 작으므로 클러스터
+        assert _should_cluster((50, 0, 70, 80), (50, 95, 70, 175))
 
 
 class TestOverlappingBboxRendering:
