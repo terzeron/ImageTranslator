@@ -14,27 +14,35 @@ LANGUAGE_TRAITS = {
 }
 
 
-def _build_prompt(ocr_texts: list[str], source_lang: str, target_lang: str) -> str:
+def _build_prompt(ocr_results: list[dict], source_lang: str, target_lang: str) -> str:
     lang_trait = LANGUAGE_TRAITS.get(source_lang, f"원본 언어 코드: {source_lang}")
     target_name = {"ko": "한국어", "ja": "일본어", "en": "영어", "zh": "중국어"}.get(
         target_lang, target_lang
     )
 
-    return f"""이미지에서 OCR로 인식된 텍스트 조각들이 있습니다.
-이 텍스트들을 문맥을 고려하여 자연스러운 단어나 문장으로 조합한 뒤 {target_name}로 번역해주세요.
+    # 텍스트와 위치 정보를 함께 표시
+    text_lines = []
+    for i, r in enumerate(ocr_results):
+        xs = [p[0] for p in r["bbox"]]
+        ys = [p[1] for p in r["bbox"]]
+        cx, cy = int((min(xs) + max(xs)) / 2), int((min(ys) + max(ys)) / 2)
+        text_lines.append(f'{i}: "{r["text"]}" (위치: x={cx}, y={cy})')
+
+    return f"""이미지에서 OCR로 인식된 텍스트 조각들이 있습니다. 각 텍스트의 이미지 내 위치(x,y 좌표)도 함께 제공됩니다.
+이 텍스트들을 문맥과 **위치**를 고려하여 자연스러운 문장으로 조합한 뒤 {target_name}로 번역해주세요.
 
 ## 원본 언어 특성
 {lang_trait}
 
 ## 번역 규칙
-- OCR 특성상 하나의 문장이 여러 조각으로 쪼개져 있을 수 있습니다. 문맥상 이어지는 텍스트는 합쳐서 번역하세요.
-- 반대로 하나의 조각에 여러 문장이 섞여 있으면 분리하세요.
+- **위치가 가까운 텍스트만 합치세요.** 만화 이미지에서 각 말풍선은 서로 다른 위치에 있습니다. 좌표가 멀리 떨어진 텍스트는 별개의 말풍선이므로 절대 합치지 마세요.
+- 같은 말풍선 안에서 세로쓰기로 인해 쪼개진 텍스트는 합쳐서 번역하세요.
 - 효과음(의성어/의태어)도 번역하세요.
-- 인식 오류로 보이는 무의미한 문자(confidence가 낮은 깨진 글자)는 무시하세요.
+- 인식 오류로 보이는 무의미한 문자는 무시하세요.
 - 원본 텍스트의 뉘앙스와 어조를 살려 번역하세요.
 
-## 입력 텍스트 (인덱스: 텍스트)
-{chr(10).join(f"{i}: {t}" for i, t in enumerate(ocr_texts))}
+## 입력 텍스트
+{chr(10).join(text_lines)}
 
 ## 출력 형식
 반드시 아래 JSON 배열만 출력하세요. 설명이나 마크다운 없이 순수 JSON만:
@@ -43,7 +51,7 @@ def _build_prompt(ocr_texts: list[str], source_lang: str, target_lang: str) -> s
   {{"indices": [2], "translated": "번역된 단어"}}
 ]
 
-indices는 위 입력 텍스트의 인덱스 번호 배열입니다. 합쳐서 번역한 경우 여러 인덱스를 포함합니다."""
+indices는 위 입력 텍스트의 인덱스 번호 배열입니다. **위치가 가까운** 텍스트만 합치세요."""
 
 
 def _call_claude(prompt: str) -> str:
@@ -110,7 +118,7 @@ def run_translate(
 
     ocr_texts = [r["text"] for r in results]
 
-    prompt = _build_prompt(ocr_texts, source_lang, target_lang)
+    prompt = _build_prompt(results, source_lang, target_lang)
 
     if llm == "claude":
         response_text = _call_claude(prompt)

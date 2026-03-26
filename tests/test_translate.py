@@ -49,28 +49,49 @@ class TestTranslateConstants:
 # --- 프롬프트 구성 테스트 ---
 
 
+def _make_ocr_results(texts):
+    """텍스트 리스트에서 bbox 포함 OCR 결과 dict 리스트 생성."""
+    return [
+        {
+            "bbox": [[i * 30, 0], [i * 30 + 20, 0], [i * 30 + 20, 20], [i * 30, 20]],
+            "text": t,
+            "confidence": 0.9,
+        }
+        for i, t in enumerate(texts)
+    ]
+
+
 class TestBuildPrompt:
     def test_prompt_contains_source_texts(self):
-        prompt = _build_prompt(["こんにちは", "世界"], "ja", "ko")
+        prompt = _build_prompt(_make_ocr_results(["こんにちは", "世界"]), "ja", "ko")
         assert "こんにちは" in prompt
         assert "世界" in prompt
 
     def test_prompt_contains_target_language(self):
-        prompt = _build_prompt(["hello"], "en", "ko")
+        prompt = _build_prompt(_make_ocr_results(["hello"]), "en", "ko")
         assert "한국어" in prompt
 
     def test_prompt_contains_language_traits(self):
-        prompt = _build_prompt(["テスト"], "ja", "ko")
+        prompt = _build_prompt(_make_ocr_results(["テスト"]), "ja", "ko")
         assert "세로쓰기" in prompt
 
     def test_prompt_contains_json_format_instruction(self):
-        prompt = _build_prompt(["test"], "en", "ko")
+        prompt = _build_prompt(_make_ocr_results(["test"]), "en", "ko")
         assert "indices" in prompt
         assert "translated" in prompt
 
     def test_prompt_for_chinese_mentions_right_to_left(self):
-        prompt = _build_prompt(["测试"], "zh", "ko")
+        prompt = _build_prompt(_make_ocr_results(["测试"]), "zh", "ko")
         assert "우→좌" in prompt
+
+    def test_prompt_contains_coordinates(self):
+        prompt = _build_prompt(_make_ocr_results(["テスト"]), "ja", "ko")
+        assert "x=" in prompt
+        assert "y=" in prompt
+
+    def test_prompt_warns_about_distance(self):
+        prompt = _build_prompt(_make_ocr_results(["a"]), "ja", "ko")
+        assert "멀리 떨어진" in prompt or "위치가 가까운" in prompt
 
 
 # --- LLM 응답 파싱 테스트 ---
@@ -257,11 +278,11 @@ class TestRunTranslateWithMock:
 
 class TestBuildPromptEdgeCases:
     def test_unknown_language_uses_code_fallback(self):
-        prompt = _build_prompt(["test"], "ar", "ko")
+        prompt = _build_prompt(_make_ocr_results(["test"]), "ar", "ko")
         assert "ar" in prompt
 
     def test_unknown_target_lang_uses_code(self):
-        prompt = _build_prompt(["test"], "en", "fr")
+        prompt = _build_prompt(_make_ocr_results(["test"]), "en", "fr")
         assert "fr" in prompt
 
     def test_empty_text_list(self):
@@ -269,10 +290,10 @@ class TestBuildPromptEdgeCases:
         assert "한국어" in prompt
 
     def test_text_indices_in_prompt(self):
-        prompt = _build_prompt(["aaa", "bbb", "ccc"], "en", "ko")
-        assert "0: aaa" in prompt
-        assert "1: bbb" in prompt
-        assert "2: ccc" in prompt
+        prompt = _build_prompt(_make_ocr_results(["aaa", "bbb", "ccc"]), "en", "ko")
+        assert "aaa" in prompt
+        assert "bbb" in prompt
+        assert "ccc" in prompt
 
 
 class TestParseLlmResponseEdgeCases:

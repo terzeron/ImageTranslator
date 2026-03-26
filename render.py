@@ -108,6 +108,56 @@ def _wrap_text(text: str, font: ImageFont.FreeTypeFont, max_width: int) -> list[
     return lines or [""]
 
 
+def _render_vertical(
+    draw: ImageDraw.ImageDraw,
+    text: str,
+    x: int,
+    y: int,
+    box_w: int,
+    box_h: int,
+    text_color: tuple[int, int, int],
+    font_path: str,
+) -> None:
+    """세로로 긴 영역에 텍스트를 세로쓰기 렌더링 (우→좌, 위→아래)."""
+    # 폰트 크기: 박스 폭에 맞추되, 전체 높이를 넘지 않도록
+    n = len(text)
+    font_size = min(box_w, box_h // max(1, n))
+    font_size = max(MIN_FONT_SIZE, font_size)
+
+    # 더 많은 텍스트가 있으면 여러 열 사용
+    char_h = int(font_size * LINE_SPACING)
+    chars_per_col = max(1, box_h // char_h)
+    num_cols = math.ceil(n / chars_per_col)
+
+    # 여러 열일 때 폰트 크기 재조정 (열 폭에 맞추기)
+    col_w = int(font_size * LINE_SPACING)
+    if num_cols * col_w > box_w:
+        font_size = max(MIN_FONT_SIZE, box_w // max(1, num_cols) - 2)
+        char_h = int(font_size * LINE_SPACING)
+        chars_per_col = max(1, box_h // char_h)
+        col_w = int(font_size * LINE_SPACING)
+
+    font = ImageFont.truetype(font_path, font_size)
+
+    # 우→좌 세로쓰기
+    total_cols_w = num_cols * col_w
+    x_start = x + box_w - col_w - max(0, (box_w - total_cols_w) // 2)
+
+    col = 0
+    row = 0
+    for char in text:
+        cx = x_start - col * col_w
+        cy = y + row * char_h
+        char_bbox = font.getbbox(char)
+        char_w = char_bbox[2] - char_bbox[0]
+        cx_centered = cx + (col_w - char_w) // 2
+        draw.text((cx_centered, cy), char, fill=text_color, font=font)
+        row += 1
+        if row >= chars_per_col:
+            row = 0
+            col += 1
+
+
 def _erase_rect(
     draw: ImageDraw.ImageDraw,
     img: Image.Image,
@@ -182,22 +232,26 @@ def run_render(
         # 3단계: 전체 영역도 배경색으로 지우기 (bbox 사이 잔존 텍스트 제거)
         _erase_rect(draw, img, rx1, ry1, rx2, ry2)
 
-        # 4단계: 텍스트 렌더링 (항상 가로쓰기)
+        # 4단계: 텍스트 렌더링
         bg_color = _get_background_color(img, rx1, ry1, rx2, ry2)
         text_color = _get_text_color(bg_color)
 
-        font_size, lines = _calc_font_size(translated, rw, rh, font_file)
-        font = ImageFont.truetype(font_file, font_size)
+        # 영역이 세로로 길면 세로쓰기, 아니면 가로쓰기
+        if rh > rw * 1.5:
+            _render_vertical(draw, translated, rx1, ry1, rw, rh, text_color, font_file)
+        else:
+            font_size, lines = _calc_font_size(translated, rw, rh, font_file)
+            font = ImageFont.truetype(font_file, font_size)
 
-        total_text_h = int(len(lines) * font_size * LINE_SPACING)
-        y_offset = ry1 + (rh - total_text_h) // 2
+            total_text_h = int(len(lines) * font_size * LINE_SPACING)
+            y_offset = ry1 + (rh - total_text_h) // 2
 
-        for line in lines:
-            line_bbox = font.getbbox(line)
-            line_w = line_bbox[2] - line_bbox[0]
-            x_offset = rx1 + (rw - line_w) // 2
-            draw.text((x_offset, y_offset), line, fill=text_color, font=font)
-            y_offset += int(font_size * LINE_SPACING)
+            for line in lines:
+                line_bbox = font.getbbox(line)
+                line_w = line_bbox[2] - line_bbox[0]
+                x_offset = rx1 + (rw - line_w) // 2
+                draw.text((x_offset, y_offset), line, fill=text_color, font=font)
+                y_offset += int(font_size * LINE_SPACING)
 
     output_path = Path.cwd() / f"{img_path.stem}_rendered{img_path.suffix}"
     img.save(output_path)
