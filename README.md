@@ -43,7 +43,7 @@ GEMINI_API_KEY=...
 uv run python main.py pipeline --lang ja --model v5 --llm claude --target-lang ko manga.jpg
 ```
 
-출력:
+출력 (중간 산출물이 없을 때):
 
 ```
 [1/3] OCR 처리 중: manga.jpg
@@ -53,6 +53,22 @@ uv run python main.py pipeline --lang ja --model v5 --llm claude --target-lang k
 [3/3] 이미지 합성 중
   → manga_rendered.jpg
 완료: manga_rendered.jpg
+```
+
+출력 (중간 산출물 캐시가 있을 때):
+
+```
+[1/3] OCR 캐시 사용: manga_ocr.json
+[2/3] 번역 캐시 사용: manga_translated.json
+[3/3] 이미지 합성 중
+  → manga_rendered.jpg
+완료: manga_rendered.jpg
+```
+
+캐시를 무시하고 재생성하려면 `--reset` 옵션:
+
+```bash
+uv run python main.py pipeline --reset --lang ja --model v5 --llm claude --target-lang ko manga.jpg
 ```
 
 ### 개별 단계 실행
@@ -70,13 +86,14 @@ uv run python main.py render manga_translated.json manga.jpg
 
 ### 옵션
 
-| 옵션            | 값             | 기본값           | 설명                |
-| --------------- | -------------- | ---------------- | ------------------- |
-| `--lang`        | ja, ko, en, zh | ja               | OCR 인식 언어       |
-| `--model`       | v3, v4, v5     | v5               | PaddleOCR 모델 버전 |
-| `--llm`         | claude, gemini | claude           | 번역에 사용할 LLM   |
-| `--target-lang` | ko, ja, en, zh | ko               | 번역 대상 언어      |
-| `--font`        | 파일 경로      | NanumBarunGothic | 렌더링 폰트         |
+| 옵션            | 값             | 기본값           | 설명                  |
+| --------------- | -------------- | ---------------- | --------------------- |
+| `--lang`        | ja, ko, en, zh | ja               | OCR 인식 언어         |
+| `--model`       | v3, v4, v5     | v5               | PaddleOCR 모델 버전   |
+| `--llm`         | claude, gemini | claude           | 번역에 사용할 LLM     |
+| `--target-lang` | ko, ja, en, zh | ko               | 번역 대상 언어        |
+| `--font`        | 파일 경로      | NanumBarunGothic | 렌더링 폰트           |
+| `--reset`       | (플래그)       |                  | 중간 산출물 캐시 무시 |
 
 ## 지원 언어
 

@@ -68,6 +68,9 @@ def main():
     pl_parser.add_argument(
         "--font", default=None, help="폰트 파일 경로 (기본: NanumBarunGothic)"
     )
+    pl_parser.add_argument(
+        "--reset", action="store_true", help="중간 산출물 캐시 무시하고 재생성"
+    )
 
     args = parser.parse_args()
 
@@ -89,15 +92,28 @@ def main():
         )
         print(f"렌더링 결과 저장: {output_path}")
     elif args.command == "pipeline":
-        print(f"[1/3] OCR 처리 중: {args.image_path}")
-        ocr_path = run_ocr(args.image_path, lang=args.lang, model=args.model)
-        print(f"  → {ocr_path}")
+        from pathlib import Path
 
-        print(f"[2/3] 번역 중 ({args.llm})")
-        tr_path = run_translate(
-            str(ocr_path), target_lang=args.target_lang, llm=args.llm
-        )
-        print(f"  → {tr_path}")
+        stem = Path(args.image_path).stem
+        ocr_path = Path.cwd() / f"{stem}_ocr.json"
+        tr_path = Path.cwd() / f"{stem}_translated.json"
+        reset = args.reset
+
+        if not reset and ocr_path.exists():
+            print(f"[1/3] OCR 캐시 사용: {ocr_path}")
+        else:
+            print(f"[1/3] OCR 처리 중: {args.image_path}")
+            ocr_path = run_ocr(args.image_path, lang=args.lang, model=args.model)
+            print(f"  → {ocr_path}")
+
+        if not reset and tr_path.exists():
+            print(f"[2/3] 번역 캐시 사용: {tr_path}")
+        else:
+            print(f"[2/3] 번역 중 ({args.llm})")
+            tr_path = run_translate(
+                str(ocr_path), target_lang=args.target_lang, llm=args.llm
+            )
+            print(f"  → {tr_path}")
 
         print("[3/3] 이미지 합성 중")
         output_path = run_render(str(tr_path), args.image_path, font_path=args.font)

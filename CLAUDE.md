@@ -26,6 +26,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 # 파이프라인 한번에 실행 (OCR → 번역 → 이미지 합성)
 uv run python main.py pipeline --lang ja --model v5 --llm claude --target-lang ko image.jpg
 
+# 중간 산출물 캐시 무시하고 재생성
+uv run python main.py pipeline --reset --lang ja --model v5 --llm claude --target-lang ko image.jpg
+
 # 개별 단계 실행
 uv run python main.py ocr --lang ja --model v5 image.jpg
 uv run python main.py translate image_ocr.json --target-lang ko --llm claude
