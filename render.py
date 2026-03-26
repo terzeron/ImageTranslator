@@ -222,73 +222,57 @@ def run_render(
             _erase_rect(draw, img, bx1, by1, bx2, by2)
             bbox_rects.append((bx1, by1, bx2, by2))
 
-        # 2단계: 원본 bbox에서 폰트 크기 추정 (그룹 내 통일)
-        # 세로쓰기(h>w): 폭 ≈ 폰트 크기, 가로쓰기(w>h): 높이 ≈ 폰트 크기
+        # 2단계: 원본 bbox에서 폰트 크기 추정 → 최대값 사용
         estimated_sizes = []
         for bx1, by1, bx2, by2 in bbox_rects:
             bw, bh = bx2 - bx1, by2 - by1
             if bw <= 0 or bh <= 0:
                 continue
             if bh > bw * 1.5:
-                estimated_sizes.append(bw)  # 세로쓰기: 폭 = 폰트 크기
+                estimated_sizes.append(bw)
             else:
-                estimated_sizes.append(bh)  # 가로쓰기: 높이 = 폰트 크기
-        unified_size = (
-            max(MIN_FONT_SIZE, int(sum(estimated_sizes) / len(estimated_sizes)))
-            if estimated_sizes
-            else MIN_FONT_SIZE
-        )
+                estimated_sizes.append(bh)
+        font_size = max(estimated_sizes) if estimated_sizes else MIN_FONT_SIZE
+        font_size = max(MIN_FONT_SIZE, font_size)
 
-        # 3단계: 텍스트를 각 bbox에 면적 비율로 분배하여 렌더링
-        bbox_areas = [(r[2] - r[0]) * (r[3] - r[1]) for r in bbox_rects]
-        total_area = sum(bbox_areas) or 1
-        text_remaining = translated
+        # 3단계: 전체 bounding rect 계산 (렌더링 영역)
+        all_x = [r[0] for r in bbox_rects] + [r[2] for r in bbox_rects]
+        all_y = [r[1] for r in bbox_rects] + [r[3] for r in bbox_rects]
+        rx1, ry1 = min(all_x), min(all_y)
+        rx2, ry2 = max(all_x), max(all_y)
+        rw, rh = rx2 - rx1, ry2 - ry1
 
-        for i, (bx1, by1, bx2, by2) in enumerate(bbox_rects):
-            bw = bx2 - bx1
-            bh = by2 - by1
-            if bw <= 0 or bh <= 0:
-                continue
+        if rw <= 0 or rh <= 0:
+            continue
 
-            # 이 bbox에 할당할 텍스트
-            if i < len(bbox_rects) - 1:
-                ratio = bbox_areas[i] / total_area
-                char_count = max(1, round(len(translated) * ratio))
-                chunk = text_remaining[:char_count]
-                text_remaining = text_remaining[char_count:]
-            else:
-                chunk = text_remaining
+        bg_color = _get_background_color(img, rx1, ry1, rx2, ry2)
+        text_color = _get_text_color(bg_color)
 
-            if not chunk.strip():
-                continue
+        # 4단계: 통일 폰트 크기로 전체 영역에 렌더링
+        if rh > rw * 1.5:
+            _render_vertical(
+                draw,
+                translated,
+                rx1,
+                ry1,
+                rw,
+                rh,
+                text_color,
+                font_file,
+                suggested_size=font_size,
+            )
+        else:
+            font = ImageFont.truetype(font_file, font_size)
+            lines = _wrap_text(translated, font, rw)
+            total_text_h = int(len(lines) * font_size * LINE_SPACING)
+            y_offset = ry1 + (rh - total_text_h) // 2
 
-            bg_color = _get_background_color(img, bx1, by1, bx2, by2)
-            text_color = _get_text_color(bg_color)
-
-            if bh > bw * 1.5:
-                _render_vertical(
-                    draw,
-                    chunk,
-                    bx1,
-                    by1,
-                    bw,
-                    bh,
-                    text_color,
-                    font_file,
-                    suggested_size=unified_size,
-                )
-            else:
-                font = ImageFont.truetype(font_file, unified_size)
-                lines = _wrap_text(chunk, font, bw)
-                total_text_h = int(len(lines) * unified_size * LINE_SPACING)
-                y_offset = by1 + (bh - total_text_h) // 2
-
-                for line in lines:
-                    line_bbox = font.getbbox(line)
-                    line_w = line_bbox[2] - line_bbox[0]
-                    x_offset = bx1 + (bw - line_w) // 2
-                    draw.text((x_offset, y_offset), line, fill=text_color, font=font)
-                    y_offset += int(unified_size * LINE_SPACING)
+            for line in lines:
+                line_bbox = font.getbbox(line)
+                line_w = line_bbox[2] - line_bbox[0]
+                x_offset = rx1 + (rw - line_w) // 2
+                draw.text((x_offset, y_offset), line, fill=text_color, font=font)
+                y_offset += int(font_size * LINE_SPACING)
 
     output_path = Path.cwd() / f"{img_path.stem}_rendered{img_path.suffix}"
     img.save(output_path)
