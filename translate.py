@@ -132,11 +132,14 @@ def run_translate(
 
     translations = []
     for group in translation_groups:
-        indices = group["indices"]
+        indices = group.get("indices", [])
+        translated_text = group.get("translated", "")
+        if not indices:
+            continue
         translations.append(
             {
                 "original_texts": [ocr_texts[i] for i in indices if i < len(ocr_texts)],
-                "translated": group["translated"],
+                "translated": translated_text,
                 "bboxes": [results[i]["bbox"] for i in indices if i < len(results)],
             }
         )

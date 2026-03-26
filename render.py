@@ -214,12 +214,12 @@ def run_render(
         if not bboxes:
             continue
 
-        # 1단계: 각 개별 bbox를 배경색으로 지우기
+        # 1단계: 각 개별 원본 bbox만 배경색으로 지우기
         for bbox in bboxes:
             bx1, by1, bx2, by2 = _get_bbox_rect(bbox)
             _erase_rect(draw, img, bx1, by1, bx2, by2)
 
-        # 2단계: 전체 bboxes의 bounding rect 계산
+        # 2단계: 전체 bboxes의 bounding rect 계산 (렌더링 영역)
         all_x, all_y = [], []
         for bbox in bboxes:
             for p in bbox:
@@ -232,9 +232,6 @@ def run_render(
 
         if rw <= 0 or rh <= 0:
             continue
-
-        # 3단계: 전체 영역도 배경색으로 지우기 (bbox 사이 잔존 텍스트 제거)
-        _erase_rect(draw, img, rx1, ry1, rx2, ry2)
 
         # 4단계: 텍스트 렌더링
         bg_color = _get_background_color(img, rx1, ry1, rx2, ry2)
