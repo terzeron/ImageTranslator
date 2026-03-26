@@ -222,16 +222,21 @@ def run_render(
             _erase_rect(draw, img, bx1, by1, bx2, by2)
             bbox_rects.append((bx1, by1, bx2, by2))
 
-        # 2단계: 원본 bbox에서 폰트 크기 추정 → 최대값 사용
+        # 2단계: 원본 텍스트 + bbox에서 폰트 크기 추정 → 최대값 사용
+        original_texts = item.get("original_texts", [])
         estimated_sizes = []
-        for bx1, by1, bx2, by2 in bbox_rects:
+        for idx, (bx1, by1, bx2, by2) in enumerate(bbox_rects):
             bw, bh = bx2 - bx1, by2 - by1
             if bw <= 0 or bh <= 0:
                 continue
+            n = len(original_texts[idx]) if idx < len(original_texts) else 1
+            n = max(1, n)
             if bh > bw * 1.5:
-                estimated_sizes.append(bw)
+                # 세로쓰기: 높이를 글자 수로 나누고, 폭과 비교하여 작은 값
+                estimated_sizes.append(min(bw, int(bh / n)))
             else:
-                estimated_sizes.append(bh)
+                # 가로쓰기: 폭을 글자 수로 나누고, 높이와 비교하여 작은 값
+                estimated_sizes.append(min(bh, int(bw / n)))
         font_size = max(estimated_sizes) if estimated_sizes else MIN_FONT_SIZE
         font_size = max(MIN_FONT_SIZE, font_size)
 
