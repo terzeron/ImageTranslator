@@ -20,26 +20,27 @@ def _build_prompt(ocr_results: list[dict], source_lang: str, target_lang: str) -
         target_lang, target_lang
     )
 
-    # 텍스트와 위치 정보를 함께 표시
+    # 텍스트와 위치/크기 정보를 함께 표시
     text_lines = []
     for i, r in enumerate(ocr_results):
         xs = [p[0] for p in r["bbox"]]
         ys = [p[1] for p in r["bbox"]]
         cx, cy = int((min(xs) + max(xs)) / 2), int((min(ys) + max(ys)) / 2)
-        text_lines.append(f'{i}: "{r["text"]}" (위치: x={cx}, y={cy})')
+        bw, bh = int(max(xs) - min(xs)), int(max(ys) - min(ys))
+        text_lines.append(f'{i}: "{r["text"]}" (위치: x={cx}, y={cy}, 크기: {bw}x{bh})')
 
-    return f"""이미지에서 OCR로 인식된 텍스트 조각들이 있습니다. 각 텍스트의 이미지 내 위치(x,y 좌표)도 함께 제공됩니다.
-이 텍스트들을 문맥과 **위치**를 고려하여 자연스러운 문장으로 조합한 뒤 {target_name}로 번역해주세요.
+    return f"""만화 이미지에서 OCR로 인식된 텍스트 조각들입니다. 각 텍스트의 이미지 내 위치(x,y 좌표)와 bbox 크기(w,h)도 함께 제공됩니다.
+이것은 만화의 대화 장면이므로, 전체 텍스트의 맥락(대화 흐름)을 이해한 뒤 {target_name}로 번역해주세요.
 
 ## 원본 언어 특성
 {lang_trait}
 
 ## 번역 규칙
-- **위치가 가까운 텍스트만 합치세요.** 만화 이미지에서 각 말풍선은 서로 다른 위치에 있습니다. 좌표가 멀리 떨어진 텍스트는 별개의 말풍선이므로 절대 합치지 마세요.
-- 같은 말풍선 안에서 세로쓰기로 인해 쪼개진 텍스트는 합쳐서 번역하세요.
-- 효과음(의성어/의태어)도 번역하세요.
-- 인식 오류로 보이는 무의미한 문자는 무시하세요.
-- 원본 텍스트의 뉘앙스와 어조를 살려 번역하세요.
+1. **전체 맥락 파악**: 모든 텍스트를 먼저 읽고 대화의 흐름을 파악하세요.
+2. **위치 기반 그룹핑**: 위치(x,y)가 가까운 텍스트는 같은 말풍선입니다. 합쳐서 하나의 자연스러운 문장으로 번역하세요. 좌표가 멀리 떨어진 텍스트는 별개의 말풍선이므로 합치지 마세요.
+3. **모든 텍스트 포함**: 입력의 모든 인덱스가 출력에 포함되어야 합니다. 빠뜨리지 마세요. 효과음, 페이지 번호도 포함하세요.
+4. **번역 분량**: 번역된 텍스트의 길이가 원본과 비슷하게 유지되도록 하세요. 원본이 짧은 감탄사면 번역도 짧게, 원본이 긴 문장이면 번역도 적절히 길게.
+5. 인식 오류로 보이는 무의미한 문자(깨진 글자)는 무시하되, 출력 JSON에 indices는 포함하고 translated를 빈 문자열로 하세요.
 
 ## 입력 텍스트
 {chr(10).join(text_lines)}
@@ -51,7 +52,7 @@ def _build_prompt(ocr_results: list[dict], source_lang: str, target_lang: str) -
   {{"indices": [2], "translated": "번역된 단어"}}
 ]
 
-indices는 위 입력 텍스트의 인덱스 번호 배열입니다. **위치가 가까운** 텍스트만 합치세요."""
+indices는 위 입력 텍스트의 인덱스 번호 배열입니다. **모든 인덱스가 정확히 한 번씩 포함**되어야 합니다."""
 
 
 def _call_claude(prompt: str) -> str:

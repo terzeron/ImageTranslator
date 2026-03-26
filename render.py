@@ -119,23 +119,27 @@ def _render_vertical(
     font_path: str,
 ) -> None:
     """세로로 긴 영역에 텍스트를 세로쓰기 렌더링 (우→좌, 위→아래)."""
-    # 폰트 크기: 박스 폭에 맞추되, 전체 높이를 넘지 않도록
     n = len(text)
-    font_size = min(box_w, box_h // max(1, n))
-    font_size = max(MIN_FONT_SIZE, font_size)
+    if n == 0:
+        return
 
-    # 더 많은 텍스트가 있으면 여러 열 사용
+    # 면적 기반 폰트 크기 추정: n글자를 cols x rows로 배치
+    # s * LINE_SPACING * cols <= box_w, s * LINE_SPACING * rows <= box_h
+    # cols * rows >= n → s ≈ sqrt(box_w * box_h / (n * LINE_SPACING^2))
+    font_size = int(math.sqrt(box_w * box_h / (n * LINE_SPACING * LINE_SPACING)))
+    font_size = max(MIN_FONT_SIZE, min(font_size, box_w))
+
     char_h = int(font_size * LINE_SPACING)
+    col_w = int(font_size * LINE_SPACING)
     chars_per_col = max(1, box_h // char_h)
     num_cols = math.ceil(n / chars_per_col)
 
-    # 여러 열일 때 폰트 크기 재조정 (열 폭에 맞추기)
-    col_w = int(font_size * LINE_SPACING)
+    # 열이 너무 많으면 폰트 축소
     if num_cols * col_w > box_w:
         font_size = max(MIN_FONT_SIZE, box_w // max(1, num_cols) - 2)
         char_h = int(font_size * LINE_SPACING)
-        chars_per_col = max(1, box_h // char_h)
         col_w = int(font_size * LINE_SPACING)
+        chars_per_col = max(1, box_h // char_h)
 
     font = ImageFont.truetype(font_path, font_size)
 
