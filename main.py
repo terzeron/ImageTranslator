@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+
+import os
+
+os.environ.setdefault("PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK", "True")
+
 import argparse
 import sys
 

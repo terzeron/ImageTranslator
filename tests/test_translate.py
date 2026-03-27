@@ -310,3 +310,105 @@ class TestParseLlmResponseEdgeCases:
     def test_parse_empty_array(self):
         result = _parse_llm_response("[]")
         assert result == []
+
+
+# --- _call_claude (translate.py:59-71) ---
+
+
+class TestCallClaude:
+    def test_call_claude_returns_text(self):
+        from unittest.mock import MagicMock
+        import sys
+
+        mock_mod = MagicMock()
+        mock_msg = mock_mod.Anthropic.return_value.messages.create.return_value
+        mock_msg.stop_reason = "end_turn"
+        mock_msg.content = [MagicMock(text="hello")]
+
+        with patch.dict(sys.modules, {"anthropic": mock_mod}):
+            from translate import _call_claude
+
+            result = _call_claude("test prompt")
+        assert result == "hello"
+
+    def test_call_claude_raises_on_max_tokens(self):
+        from unittest.mock import MagicMock
+        import sys
+
+        mock_mod = MagicMock()
+        mock_msg = mock_mod.Anthropic.return_value.messages.create.return_value
+        mock_msg.stop_reason = "max_tokens"
+
+        with patch.dict(sys.modules, {"anthropic": mock_mod}):
+            from translate import _call_claude
+
+            with pytest.raises(RuntimeError, match="max_tokens"):
+                _call_claude("test prompt")
+
+
+# --- _call_gemini (translate.py:75-82) ---
+
+
+class TestCallGemini:
+    def test_call_gemini_returns_text(self):
+        from unittest.mock import MagicMock
+        import sys
+
+        mock_genai = MagicMock()
+        mock_response = (
+            mock_genai.Client.return_value.models.generate_content.return_value
+        )
+        mock_response.text = "gemini response"
+
+        mock_google = MagicMock()
+        mock_google.genai = mock_genai
+
+        with patch.dict(
+            sys.modules, {"google": mock_google, "google.genai": mock_genai}
+        ):
+            from translate import _call_gemini
+
+            result = _call_gemini("test prompt")
+        assert result == "gemini response"
+
+
+# --- 청크 번역: 200개 초과 OCR 결과 인덱스 변환 (translate.py:149) ---
+
+
+class TestRunTranslateChunking:
+    @patch("translate._call_claude")
+    def test_chunked_translation_index_offset(self, mock_claude, tmp_path):
+        """201개 텍스트 → 2 청크로 분할, 두 번째 청크 인덱스가 +200 보정됨"""
+        # 첫 청크(0~199): 인덱스 [0]
+        # 두 번째 청크(200): 인덱스 [0] → 전체 [200]
+        mock_claude.side_effect = [
+            json.dumps([{"indices": [0], "translated": "첫번째"}]),
+            json.dumps([{"indices": [0], "translated": "마지막"}]),
+        ]
+        texts = [f"text_{i}" for i in range(201)]
+        ocr_json = _make_ocr_json(tmp_path, texts)
+        output = run_translate(str(ocr_json))
+        with open(output) as f:
+            data = json.load(f)
+
+        assert len(data["translations"]) == 2
+        assert data["translations"][0]["original_texts"] == ["text_0"]
+        assert data["translations"][1]["original_texts"] == ["text_200"]
+        # _call_claude가 2번 호출됨
+        assert mock_claude.call_count == 2
+
+    @patch("translate._call_claude")
+    def test_empty_indices_group_skipped(self, mock_claude, tmp_path):
+        """indices가 빈 그룹은 무시됨 (line 149 근처)"""
+        mock_claude.return_value = json.dumps(
+            [
+                {"indices": [], "translated": "무시됨"},
+                {"indices": [0], "translated": "유효"},
+            ]
+        )
+        ocr_json = _make_ocr_json(tmp_path, ["テスト"])
+        output = run_translate(str(ocr_json))
+        with open(output) as f:
+            data = json.load(f)
+        assert len(data["translations"]) == 1
+        assert data["translations"][0]["translated"] == "유효"

@@ -61,9 +61,13 @@ def _call_claude(prompt: str) -> str:
     client = anthropic.Anthropic()
     response = client.messages.create(
         model="claude-sonnet-4-20250514",
-        max_tokens=4096,
+        max_tokens=16384,
         messages=[{"role": "user", "content": prompt}],
     )
+    if response.stop_reason == "max_tokens":
+        raise RuntimeError(
+            "Claude 응답이 max_tokens 제한으로 잘렸습니다. 텍스트가 너무 많을 수 있습니다."
+        )
     return response.content[0].text
 
 
@@ -119,19 +123,26 @@ def run_translate(
 
     ocr_texts = [r["text"] for r in results]
 
-    prompt = _build_prompt(results, source_lang, target_lang)
-
-    if llm == "claude":
-        response_text = _call_claude(prompt)
-    elif llm == "gemini":
-        response_text = _call_gemini(prompt)
-    else:
+    if llm not in LLM_CHOICES:
         raise ValueError(f"지원하지 않는 LLM: {llm}")
 
-    translation_groups = _parse_llm_response(response_text)
+    call_fn = _call_claude if llm == "claude" else _call_gemini
+
+    # 텍스트가 많으면 청크로 나눠서 번역
+    CHUNK_SIZE = 200
+    all_groups = []
+    for chunk_start in range(0, len(results), CHUNK_SIZE):
+        chunk = results[chunk_start : chunk_start + CHUNK_SIZE]
+        prompt = _build_prompt(chunk, source_lang, target_lang)
+        response_text = call_fn(prompt)
+        groups = _parse_llm_response(response_text)
+        # 청크 내 로컬 인덱스를 전체 인덱스로 변환
+        for g in groups:
+            g["indices"] = [i + chunk_start for i in g["indices"]]
+        all_groups.extend(groups)
 
     translations = []
-    for group in translation_groups:
+    for group in all_groups:
         indices = group.get("indices", [])
         translated_text = group.get("translated", "")
         if not indices:

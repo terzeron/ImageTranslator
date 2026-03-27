@@ -18,6 +18,11 @@ htmlcov/
 .pytest_cache/
 .last_test_success
 .last_test_run
+.test_performance_cache
+.dependency_cache.json
+
+# direnv
+.envrc
 
 # Pipeline output (중간/최종 산출물)
 *_ocr.json

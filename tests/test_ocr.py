@@ -336,3 +336,46 @@ class TestOcrWrongLanguage:
             [r for r in result_with_correct_lang["results"] if r["confidence"] > 0.5]
         )
         assert correct_meaningful > wrong_meaningful
+
+
+# --- dt_polys 없는 예측 결과 건너뛰기 (ocr.py:53) ---
+
+
+class TestOcrNoDtPolys:
+    def test_prediction_without_dt_polys_skipped(self, tmp_path, monkeypatch):
+        """PaddleOCR 결과에 dt_polys가 없으면 해당 결과를 건너뜀"""
+        from unittest.mock import MagicMock, patch
+        from PIL import Image
+
+        # 유효한 이미지 생성
+        img_path = tmp_path / "test.jpg"
+        Image.new("RGB", (100, 100), (255, 255, 255)).save(img_path)
+        monkeypatch.chdir(tmp_path)
+
+        # dt_polys 없는 결과 + 정상 결과를 반환하는 mock
+        no_polys_result = MagicMock()
+        no_polys_result.json = {"res": {"some_other_key": "value"}}
+
+        normal_result = MagicMock()
+        normal_result.json = {
+            "res": {
+                "dt_polys": [[[0, 0], [10, 0], [10, 10], [0, 10]]],
+                "rec_texts": ["hello"],
+                "rec_scores": [0.95],
+            }
+        }
+
+        mock_ocr_instance = MagicMock()
+        mock_ocr_instance.predict.return_value = [no_polys_result, normal_result]
+
+        with patch("ocr.PaddleOCR", return_value=mock_ocr_instance):
+            from ocr import run_ocr
+
+            output_path = run_ocr(str(img_path), lang="en", model="v5")
+
+        with open(output_path) as f:
+            data = json.load(f)
+
+        # dt_polys 없는 결과는 건너뛰고, 정상 결과만 포함
+        assert len(data["results"]) == 1
+        assert data["results"][0]["text"] == "hello"

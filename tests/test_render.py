@@ -446,3 +446,186 @@ class TestTranslationItemRendering:
         assert all(c > 200 for c in outside_pixel), (
             f"bbox 밖 영역이 변경됨: {outside_pixel}"
         )
+
+
+# --- _calc_font_size: bigger font 성공 분기 (render.py:81-83) ---
+
+
+class TestCalcFontSizeBiggerFont:
+    def test_bigger_font_accepted_in_large_box(self):
+        """충분히 큰 박스에 짧은 텍스트 → bigger font 시도 성공하여 크기 증가"""
+        from render import _calc_font_size
+
+        size, lines = _calc_font_size("ab", 500, 500, FONT_PATH)
+        # 큰 박스에 짧은 텍스트이므로 MIN_FONT_SIZE보다 훨씬 커야 함
+        assert size > MIN_FONT_SIZE + 1
+        assert len(lines) >= 1
+
+
+# --- _render_vertical (render.py:156, 161-162) ---
+
+
+class TestRenderVertical:
+    def test_empty_text_returns_immediately(self):
+        """빈 텍스트는 아무것도 렌더링하지 않음 (line 156)"""
+        from render import _render_vertical
+
+        img = Image.new("RGB", (100, 200), (255, 255, 255))
+        draw = ImageDraw.Draw(img)
+        import numpy as np
+
+        before = np.array(img).copy()
+        _render_vertical(draw, "", 10, 10, 80, 180, (0, 0, 0), FONT_PATH)
+        after = np.array(img)
+        assert np.array_equal(before, after), "빈 텍스트인데 이미지가 변경됨"
+
+    def test_auto_size_without_suggested(self):
+        """suggested_size=0이면 자동 크기 계산 (lines 161-162)"""
+        from render import _render_vertical
+
+        img = Image.new("RGB", (60, 300), (255, 255, 255))
+        draw = ImageDraw.Draw(img)
+        import numpy as np
+
+        before = np.array(img).copy()
+        _render_vertical(
+            draw, "테스트", 5, 5, 50, 280, (0, 0, 0), FONT_PATH, suggested_size=0
+        )
+        after = np.array(img)
+        assert not np.array_equal(before, after), "텍스트가 렌더링되지 않음"
+
+
+# --- _cluster_bboxes (render.py:224) ---
+
+
+class TestClusterBboxesEmpty:
+    def test_empty_list_returns_empty(self):
+        from render import _cluster_bboxes
+
+        assert _cluster_bboxes([]) == []
+
+
+# --- run_render: degenerate bbox (render.py:305) ---
+
+
+class TestRunRenderDegenerateBbox:
+    def test_zero_size_bbox_skipped(self, tmp_path):
+        """동일 좌표 bbox(bw=0)는 건너뛰고 에러 없이 완료"""
+        img_path = _make_test_image(tmp_path, width=200, height=200)
+        translations = [
+            {
+                "original_texts": ["x"],
+                "translated": "테스트",
+                "bboxes": [[[50, 50], [50, 50], [50, 100], [50, 100]]],
+            }
+        ]
+        tr_json = _make_translated_json(tmp_path, translations)
+        output = run_render(str(tr_json), str(img_path))
+        assert output.exists()
+
+
+# --- run_render: empty bboxes list (render.py:327) ---
+
+
+class TestRunRenderEmptyBboxes:
+    def test_translation_with_empty_bboxes_skipped(self, tmp_path):
+        """bboxes가 빈 리스트인 항목은 건너뛰기"""
+        img_path = _make_test_image(tmp_path, width=200, height=200)
+        translations = [
+            {
+                "original_texts": [],
+                "translated": "테스트",
+                "bboxes": [],
+            }
+        ]
+        tr_json = _make_translated_json(tmp_path, translations)
+        output = run_render(str(tr_json), str(img_path))
+        assert output.exists()
+
+
+# --- run_render: degenerate cluster cw/ch<=0 (render.py:351) ---
+
+
+class TestRunRenderDegenerateCluster:
+    def test_degenerate_cluster_rect_skipped(self, tmp_path):
+        """클러스터의 bounding rect가 0 크기이면 건너뛰기"""
+        img_path = _make_test_image(tmp_path, width=200, height=200)
+        # 동일 좌표 2개 bbox → 클러스터의 cw/ch=0
+        translations = [
+            {
+                "original_texts": ["a", "b"],
+                "translated": "테스트",
+                "bboxes": [
+                    [[100, 100], [100, 100], [100, 100], [100, 100]],
+                    [[100, 100], [100, 100], [100, 100], [100, 100]],
+                ],
+            }
+        ]
+        tr_json = _make_translated_json(tmp_path, translations)
+        output = run_render(str(tr_json), str(img_path))
+        assert output.exists()
+
+
+# --- run_render: whitespace-only chunk (render.py:363) ---
+
+
+class TestRunRenderWhitespaceChunk:
+    def test_whitespace_only_translated_skipped(self, tmp_path):
+        """translated가 공백만 있는 항목은 건너뛰기"""
+        img_path = _make_test_image(tmp_path, width=200, height=200)
+        translations = [
+            {
+                "original_texts": ["x"],
+                "translated": "   ",
+                "bboxes": [[[10, 10], [100, 10], [100, 50], [10, 50]]],
+            }
+        ]
+        tr_json = _make_translated_json(tmp_path, translations)
+        output = run_render(str(tr_json), str(img_path))
+        assert output.exists()
+
+    def test_multi_cluster_whitespace_chunk_skipped(self, tmp_path, monkeypatch):
+        """복수 클러스터에서 텍스트 분배 시 공백만 남는 chunk 건너뛰기 (line 363)"""
+        monkeypatch.chdir(tmp_path)
+        img_path = _make_test_image(tmp_path, width=500, height=500)
+        # 멀리 떨어진 2개 bbox → 2개 클러스터, " x"를 분배하면 첫 클러스터가 " " 획득
+        translations = [
+            {
+                "original_texts": ["a", "b"],
+                "translated": " x",
+                "bboxes": [
+                    [[10, 10], [100, 10], [100, 100], [10, 100]],
+                    [[400, 400], [490, 400], [490, 490], [400, 490]],
+                ],
+            }
+        ]
+        tr_json = _make_translated_json(tmp_path, translations)
+        output = run_render(str(tr_json), str(img_path))
+        assert output.exists()
+
+
+# --- run_render: 세로 렌더링 통합 (render.py:156, 161-162 via run_render) ---
+
+
+class TestRunRenderVerticalText:
+    def test_vertical_bbox_renders_text(self, tmp_path, monkeypatch):
+        """세로로 긴 bbox에 텍스트가 세로 렌더링됨"""
+        monkeypatch.chdir(tmp_path)
+        img_path = _make_test_image(tmp_path, width=200, height=400)
+        # 세로로 긴 bbox (bh > bw * 1.5)
+        translations = [
+            {
+                "original_texts": ["テスト"],
+                "translated": "테스트입니다",
+                "bboxes": [[[50, 10], [80, 10], [80, 300], [50, 300]]],
+            }
+        ]
+        tr_json = _make_translated_json(tmp_path, translations)
+        output = run_render(str(tr_json), str(img_path))
+        assert output.exists()
+        import numpy as np
+
+        original = np.array(Image.open(img_path))
+        rendered = np.array(Image.open(output))
+        # 세로 텍스트가 렌더링되어 이미지가 달라야 함
+        assert not np.array_equal(original, rendered)
